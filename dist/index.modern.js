@@ -138,9 +138,9 @@ var Checkbox = (function (props) {
     onClick: props.onClick,
     disabled: props.disabled,
     title: props.title
-  }, React.createElement("label", {
+  }), React.createElement("label", {
     className: "form-check-label"
-  }, props.children)));
+  }, props.children));
 });
 
 var DataTable = function DataTable(props) {

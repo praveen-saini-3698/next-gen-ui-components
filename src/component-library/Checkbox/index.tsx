@@ -11,11 +11,10 @@ export default (props: CheckboxProps) => {
                 onClick={props.onClick}
                 disabled={props.disabled}
                 title={props.title}
-            >
-                <label className="form-check-label">
-                    {props.children}
-                </label>
-            </input>
+            />
+            <label className="form-check-label">
+                {props.children}
+            </label>
         </div>
     );
 };
