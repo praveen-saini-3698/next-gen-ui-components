@@ -94,3 +94,99 @@
 ._index__ui-data-table-tek__2S4Tf svg {
   color: rgba(43, 129, 214, 0.8117647059);
 }
+._index-module__ui-data-table-tek__27W74 {
+  padding: 0.5rem;
+}
+._index-module__ui-data-table-tek__27W74 ._index-module__data-table__3fMGm {
+  width: 100%;
+  text-align: center;
+}
+._index-module__ui-data-table-tek__27W74 ._index-module__data-table__3fMGm thead tr th {
+  font-weight: bold;
+  border-bottom: 1px solid lightslategray;
+  padding-bottom: 0.5rem;
+}
+._index-module__ui-data-table-tek__27W74 ._index-module__data-table__3fMGm thead tr th ._index-module__sortable-column__2xDhl {
+  vertical-align: middle;
+  padding-left: 0.2rem;
+}
+._index-module__ui-data-table-tek__27W74 ._index-module__show-pointer__2yfNS {
+  cursor: pointer;
+}
+._index-module__ui-data-table-tek__27W74 ._index-module__show-global-search__2Sx3R {
+  display: flex;
+  justify-content: space-between;
+}
+._index-module__ui-data-table-tek__27W74 ._index-module__show-global-search__2Sx3R ._index-module__table-title__HTXGl {
+  font-size: x-large;
+  font-weight: 500;
+  padding-left: 1rem;
+}
+._index-module__ui-data-table-tek__27W74 ._index-module__show-global-search__2Sx3R input {
+  width: 15rem;
+  height: 2rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: large;
+  padding-left: 1.8rem;
+  background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat left;
+  background-size: 25px;
+  margin-bottom: 1rem;
+}
+._index-module__ui-data-table-tek__27W74 ._index-module__table-footer__1V7LX {
+  border-top: 1px solid;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 1rem;
+}
+._index-module__ui-data-table-tek__27W74 ._index-module__table-footer__1V7LX ._index-module__table-footer-left__NVrA3 {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-direction: row;
+}
+._index-module__ui-data-table-tek__27W74 ._index-module__table-footer__1V7LX ._index-module__table-footer-left__NVrA3 ._index-module__table-footer-left-2__o_eOA {
+  text-decoration: underline;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-direction: column;
+}
+._index-module__ui-data-table-tek__27W74 ._index-module__table-footer__1V7LX ._index-module__table-footer-left__NVrA3 ._index-module__show-all-data__Ve8dK {
+  padding-left: 2rem;
+}
+._index-module__ui-data-table-tek__27W74 ._index-module__table-footer__1V7LX ._index-module__table-footer-right__2iwvf {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+}
+._index-module__ui-data-table-tek__27W74 ._index-module__table-footer__1V7LX ._index-module__table-footer-right__2iwvf button {
+  font-weight: bold;
+}
+._index-module__ui-data-table-tek__27W74 ._index-module__table-footer__1V7LX ._index-module__table-footer-right__2iwvf :hover {
+  color: aliceblue;
+  background-color: #0359da;
+}
+._index-module__ui-data-table-tek__27W74 ._index-module__table-selected-rows__o5Ukt {
+  background-color: rgba(3, 89, 218, 0.137254902);
+  padding: 0.01rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+._index-module__ui-data-table-tek__27W74 ._index-module__table-selected-rows__o5Ukt p {
+  padding-left: 1rem;
+}
+._index-module__ui-data-table-tek__27W74 ._index-module__table-selected-rows__o5Ukt ._index-module__do-with-selected__3BxJo {
+  padding-left: 2rem;
+  color: #0359da;
+  font-weight: bold;
+}
+._index-module__ui-data-table-tek__27W74 ._index-module__table-selected-rows__o5Ukt ._index-module__do-with-selected__3BxJo:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+._index-module__ui-data-table-tek__27W74 svg {
+  color: rgba(43, 129, 214, 0.8117647059);
+}

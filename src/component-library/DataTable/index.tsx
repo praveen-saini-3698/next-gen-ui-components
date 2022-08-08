@@ -1,4 +1,4 @@
-import './index.scss';
+import styles from './index.module.scss';
 import React from 'react';
 import { FaSort, FaSortUp, FaSortDown } from 'react-icons/fa';
 import { DataTableProps, PaginationOptions, SortTypes } from './types';
@@ -82,9 +82,9 @@ export const DataTable = (props: DataTableProps) => {
     }
 
     return (
-        <div className='ui-data-table-tek'>
-            <div className="show-global-search">
-                <div className="table-title">
+        <div className={styles['ui-data-table-tek']}>
+            <div className={styles["show-global-search"]}>
+                <div className={styles["table-title"]}>
                     {props?.title}
                 </div>
                 <div>
@@ -95,17 +95,17 @@ export const DataTable = (props: DataTableProps) => {
                     />
                 </div>
             </div>
-            {selectedRows.length ? <div className="table-selected-rows">
+            {selectedRows.length ? <div className={styles["table-selected-rows"]}>
                 <div>
                     <p>
                         {selectedRows.length} Rows selected
-                        <span className="do-with-selected" onClick={() => props?.onSelectedRows ? props.onSelectedRows(selectedRows) : null}>
+                        <span className={styles["do-with-selected"]} onClick={() => props?.onSelectedRows ? props.onSelectedRows(selectedRows) : null}>
                             Do Something ?
                         </span>
                     </p>
                 </div>
             </div> : undefined}
-            <table className={`${props.className} data-table`}>
+            <table className={`${props.className} ${styles['data-table']}`}>
                 <thead>
                     <tr>
                         {props.checkbox && <th>
@@ -121,9 +121,9 @@ export const DataTable = (props: DataTableProps) => {
                             />
                         </th>}
                         {columns.map(column => <th key={column.accessor}>
-                            <div className={props.sortable ? 'show-pointer' : ''} onClick={() => updateSortDirection(column.accessor)}>
+                            <div className={props.sortable ? styles['show-pointer'] : ''} onClick={() => updateSortDirection(column.accessor)}>
                                 {column.label}
-                                {props.sortable && <span className="sortable-column">
+                                {props.sortable && <span className={styles["sortable-column"]}>
                                     {sortDirection[column.accessor] === "asc" && <FaSortDown />}
                                     {sortDirection[column.accessor] === "desc" && <FaSortUp />}
                                     {sortDirection[column.accessor] === null && <FaSort />}
@@ -155,13 +155,13 @@ export const DataTable = (props: DataTableProps) => {
                 </tbody>
             </table>
             <div>
-                <div className="table-footer">
-                    <div className="table-footer-left">
-                        <div className="table-footer-left-2">
+                <div className={styles["table-footer"]}>
+                    <div className={styles["table-footer-left"]}>
+                        <div className={styles["table-footer-left-2"]}>
                             Showing {pagination.range.start} to {pagination.range.end} of {tableData.length} entries
                         </div>
                         {props.showAll && <div>
-                            <span className="show-all-data">
+                            <span className={styles["show-all-data"]}>
                                 <Checkbox onClick={(event: any) => {
                                     if (event.target.checked) {
                                         setData([...tableData]);
@@ -176,7 +176,7 @@ export const DataTable = (props: DataTableProps) => {
                             </span>
                         </div>}
                     </div>
-                    <div className="table-footer-right">
+                    <div className={styles["table-footer-right"]}>
                         <Button onClick={() => onPaginationChanged("first")} variant='outlined' size="small" color="primary" disabled={pagination.page === 0}>First</Button>
                         <Button onClick={() => onPaginationChanged("prev")} variant='outlined' size="small" color="primary" disabled={pagination.page === 0}>Previous</Button>
                         <Button variant='outlined' size="small" color="primary" disabled>{pagination.page + 1}</Button>

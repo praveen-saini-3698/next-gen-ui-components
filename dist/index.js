@@ -21,6 +21,8 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
+var styles = {"ui-data-table-tek":"_index-module__ui-data-table-tek__27W74","data-table":"_index-module__data-table__3fMGm","sortable-column":"_index-module__sortable-column__2xDhl","show-pointer":"_index-module__show-pointer__2yfNS","show-global-search":"_index-module__show-global-search__2Sx3R","table-title":"_index-module__table-title__HTXGl","table-footer":"_index-module__table-footer__1V7LX","table-footer-left":"_index-module__table-footer-left__NVrA3","table-footer-left-2":"_index-module__table-footer-left-2__o_eOA","show-all-data":"_index-module__show-all-data__Ve8dK","table-footer-right":"_index-module__table-footer-right__2iwvf","table-selected-rows":"_index-module__table-selected-rows__o5Ukt","do-with-selected":"_index-module__do-with-selected__3BxJo"};
+
 var DataTable = function DataTable(props) {
   var _props$rowPerPage, _props$pagination;
 
@@ -129,11 +131,11 @@ var DataTable = function DataTable(props) {
   };
 
   return React.createElement("div", {
-    className: 'ui-data-table-tek'
+    className: styles['ui-data-table-tek']
   }, React.createElement("div", {
-    className: "show-global-search"
+    className: styles["show-global-search"]
   }, React.createElement("div", {
-    className: "table-title"
+    className: styles["table-title"]
   }, props === null || props === void 0 ? void 0 : props.title), React.createElement("div", null, React.createElement("input", {
     type: "text",
     value: searchableText,
@@ -141,14 +143,14 @@ var DataTable = function DataTable(props) {
       return onSearch(event.target.value);
     }
   }))), selectedRows.length ? React.createElement("div", {
-    className: "table-selected-rows"
+    className: styles["table-selected-rows"]
   }, React.createElement("div", null, React.createElement("p", null, selectedRows.length, " Rows selected", React.createElement("span", {
-    className: "do-with-selected",
+    className: styles["do-with-selected"],
     onClick: function onClick() {
       return props !== null && props !== void 0 && props.onSelectedRows ? props.onSelectedRows(selectedRows) : null;
     }
   }, "Do Something ?")))) : undefined, React.createElement("table", {
-    className: props.className + " data-table"
+    className: props.className + " " + styles['data-table']
   }, React.createElement("thead", null, React.createElement("tr", null, props.checkbox && React.createElement("th", null, React.createElement(material.Checkbox, {
     checked: selectedRows.length > 0 ? true : false,
     onClick: function onClick(event) {
@@ -162,12 +164,12 @@ var DataTable = function DataTable(props) {
     return React.createElement("th", {
       key: column.accessor
     }, React.createElement("div", {
-      className: props.sortable ? 'show-pointer' : '',
+      className: props.sortable ? styles['show-pointer'] : '',
       onClick: function onClick() {
         return updateSortDirection(column.accessor);
       }
     }, column.label, props.sortable && React.createElement("span", {
-      className: "sortable-column"
+      className: styles["sortable-column"]
     }, sortDirection[column.accessor] === "asc" && React.createElement(fa.FaSortDown, null), sortDirection[column.accessor] === "desc" && React.createElement(fa.FaSortUp, null), sortDirection[column.accessor] === null && React.createElement(fa.FaSort, null))));
   }))), React.createElement("tbody", null, data.map(function (row, index) {
     return React.createElement("tr", {
@@ -190,13 +192,13 @@ var DataTable = function DataTable(props) {
       }, row[column.accessor]);
     }));
   }))), React.createElement("div", null, React.createElement("div", {
-    className: "table-footer"
+    className: styles["table-footer"]
   }, React.createElement("div", {
-    className: "table-footer-left"
+    className: styles["table-footer-left"]
   }, React.createElement("div", {
-    className: "table-footer-left-2"
+    className: styles["table-footer-left-2"]
   }, "Showing ", pagination.range.start, " to ", pagination.range.end, " of ", tableData.length, " entries"), props.showAll && React.createElement("div", null, React.createElement("span", {
-    className: "show-all-data"
+    className: styles["show-all-data"]
   }, React.createElement(material.Checkbox, {
     onClick: function onClick(event) {
       if (event.target.checked) {
@@ -210,7 +212,7 @@ var DataTable = function DataTable(props) {
       }
     }
   }), " Show All"))), React.createElement("div", {
-    className: "table-footer-right"
+    className: styles["table-footer-right"]
   }, React.createElement(material.Button, {
     onClick: function onClick() {
       return onPaginationChanged("first");
