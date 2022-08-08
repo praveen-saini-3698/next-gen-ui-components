@@ -6,7 +6,7 @@ import { default as Button } from './../Button';
 import { default as Checkbox } from './../Checkbox';
 
 export const DataTable = (props: DataTableProps) => {
-    const tableData = props.data;
+    const tableData = [...props.data];
     const [columns] = React.useState(props.columns);
     const [selectedRows, setSelectedRows] = React.useState<Array<{ [key: string]: any }>>([]);
     const [sortDirection, setSortDirection] = React.useState<{ [key: string]: SortTypes }>({});
@@ -165,13 +165,13 @@ export const DataTable = (props: DataTableProps) => {
                             <span className={styles["show-all-data"]}>
                                 <Checkbox onClick={(event: any) => {
                                     if (event.target.checked) {
-                                        setData([...tableData]);
+                                        setData([...props.data]);
                                         pagination.range.end = tableData.length;
                                         setPagination({ ...pagination });
                                     } else {
                                         pagination.range.end = rowPerPage;
                                         setPagination({ ...pagination });
-                                        setData(tableData.slice(pagination.range.start - 1, pagination.range.end));
+                                        setData(props.data.slice(pagination.range.start - 1, pagination.range.end));
                                     }
                                 }}>
                                     Show All

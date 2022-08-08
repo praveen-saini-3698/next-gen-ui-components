@@ -1,119 +1,114 @@
 .ui-data-table-tek {
-    padding: .5rem;
+  padding: .5rem;
 
-    .data-table {
-        width: 100%;
-        text-align: center;
+  .data-table {
+    width: 100%;
+    text-align: center;
 
-        thead {
-            tr {
-                th {
-                    font-weight: bold;
-                    border-bottom: 1px solid lightslategray;
-                    padding-bottom: .5rem;
+    thead {
+      tr {
+        th {
+          font-weight: bold;
+          border-bottom: 1px solid lightslategray;
+          padding-bottom: .5rem;
 
-                    .sortable-column {
-                        vertical-align: middle;
-                        padding-left: 0.2rem;
-                    }
-                }
-            }
+          .sortable-column {
+            vertical-align: middle;
+            padding-left: 0.2rem;
+          }
         }
+      }
+    }
+  }
+
+  .show-pointer {
+    cursor: pointer;
+  }
+
+  .show-global-search {
+    display: flex;
+    justify-content: space-between;
+
+    .table-title {
+      font-size: x-large;
+      font-weight: 500;
+      padding-left: 1rem;
     }
 
-    .show-pointer {
-        cursor: pointer;
+    input {
+      width: 15rem;
+      height: 2rem;
+      border: 1px solid gray;
+      border-radius: 5px;
+      font-size: large;
+      padding-left: 1.8rem;
+      background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat left;
+      background-size: 25px;
+      margin-bottom: 1rem;
     }
+  }
 
-    .show-global-search {
+  .table-footer {
+    border-top: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 1rem;
+
+    .table-footer-left {
+      display: flex;
+      justify-content: space-around;
+      align-content: center;
+      flex-direction: row;
+
+      .table-footer-left-2 {
+        text-decoration: underline;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        align-content: center;
+        flex-direction: column;
+      }
 
-        .table-title {
-            font-size: x-large;
-            font-weight: 500;
-            padding-left: 1rem;
-        }
-
-        input {
-            width: 15rem;
-            height: 2rem;
-            border: 1px solid gray;
-            border-radius: 5px;
-            font-size: large;
-            padding-left: 1.8rem;
-            background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat left;
-            background-size: 25px;
-            margin-bottom: 1rem;
-        }
+      .show-all-data {
+        padding-left: 2rem;
+      }
     }
 
-    .table-footer {
-        border-top: 1px solid;
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        padding-top: 1rem;
+    .table-footer-right {
+      display: flex;
+      justify-content: space-evenly;
+      width: 50%;
 
-        .table-footer-left {
-            display: flex;
-            justify-content: space-around;
-            align-content: center;
-            flex-direction: row;
+      button {
+        font-weight: bold;
+      }
+    }
+  }
 
-            .table-footer-left-2 {
-                text-decoration: underline;
-                display: flex;
-                justify-content: space-around;
-                align-content: center;
-                flex-direction: column;
-            }
+  .table-selected-rows {
+    background-color: #0359da23;
+    padding: 0.01rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
 
-            .show-all-data{
-                padding-left: 2rem;
-            }
-        }
-
-        .table-footer-right {
-            display: flex;
-            justify-content: space-evenly;
-            width: 50%;
-
-            button {
-                font-weight: bold;
-            }
-
-            :hover {
-                color: aliceblue;
-                background-color: #0359da;
-            }
-        }
+    p {
+      padding-left: 1rem;
     }
 
-    .table-selected-rows {
-        background-color: #0359da23;
-        padding: 0.01rem;
-        border-radius: 10px;
-        display: flex;
-        justify-content: space-between;
-
-        p {
-            padding-left: 1rem;
-        }
-
-        .do-with-selected {
-            padding-left: 2rem;
-            color: #0359da;
-            font-weight: bold;
-        }
-
-        .do-with-selected:hover {
-            cursor: pointer;
-            text-decoration: underline;
-        }
+    .do-with-selected {
+      padding-left: 2rem;
+      color: #0359da;
+      font-weight: bold;
     }
 
-    svg {
-        color: #2b81d6cf;
+    .do-with-selected:hover {
+      cursor: pointer;
+      text-decoration: underline;
     }
+  }
+
+  svg {
+    color: #2b81d6cf;
+  }
 }

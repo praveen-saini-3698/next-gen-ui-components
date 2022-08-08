@@ -153,7 +153,7 @@ var Checkbox = (function (props) {
 var DataTable = function DataTable(props) {
   var _props$rowPerPage, _props$pagination;
 
-  var tableData = props.data;
+  var tableData = [].concat(props.data);
 
   var _React$useState = React.useState(props.columns),
       columns = _React$useState[0];
@@ -329,13 +329,13 @@ var DataTable = function DataTable(props) {
   }, React.createElement(Checkbox, {
     onClick: function onClick(event) {
       if (event.target.checked) {
-        setData([].concat(tableData));
+        setData([].concat(props.data));
         pagination.range.end = tableData.length;
         setPagination(_extends({}, pagination));
       } else {
         pagination.range.end = rowPerPage;
         setPagination(_extends({}, pagination));
-        setData(tableData.slice(pagination.range.start - 1, pagination.range.end));
+        setData(props.data.slice(pagination.range.start - 1, pagination.range.end));
       }
     }
   }, "Show All")))), React.createElement("div", {
