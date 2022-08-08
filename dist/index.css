@@ -1,0 +1,96 @@
+._index__ui-data-table-tek__2S4Tf {
+  padding: 0.5rem;
+}
+._index__ui-data-table-tek__2S4Tf ._index__data-table__1TQyF {
+  width: 100%;
+  text-align: center;
+}
+._index__ui-data-table-tek__2S4Tf ._index__data-table__1TQyF thead tr th {
+  font-weight: bold;
+  border-bottom: 1px solid lightslategray;
+  padding-bottom: 0.5rem;
+}
+._index__ui-data-table-tek__2S4Tf ._index__data-table__1TQyF thead tr th ._index__sortable-column__1uYwB {
+  vertical-align: middle;
+  padding-left: 0.2rem;
+}
+._index__ui-data-table-tek__2S4Tf ._index__show-pointer__1eEit {
+  cursor: pointer;
+}
+._index__ui-data-table-tek__2S4Tf ._index__show-global-search__CwOCD {
+  display: flex;
+  justify-content: space-between;
+}
+._index__ui-data-table-tek__2S4Tf ._index__show-global-search__CwOCD ._index__table-title__1-565 {
+  font-size: x-large;
+  font-weight: 500;
+  padding-left: 1rem;
+}
+._index__ui-data-table-tek__2S4Tf ._index__show-global-search__CwOCD input {
+  width: 15rem;
+  height: 2rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: large;
+  padding-left: 1.8rem;
+  background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat left;
+  background-size: 25px;
+  margin-bottom: 1rem;
+}
+._index__ui-data-table-tek__2S4Tf ._index__table-footer__30tpt {
+  border-top: 1px solid;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 1rem;
+}
+._index__ui-data-table-tek__2S4Tf ._index__table-footer__30tpt ._index__table-footer-left__2-41l {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-direction: row;
+}
+._index__ui-data-table-tek__2S4Tf ._index__table-footer__30tpt ._index__table-footer-left__2-41l ._index__table-footer-left-2__2p65N {
+  text-decoration: underline;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-direction: column;
+}
+._index__ui-data-table-tek__2S4Tf ._index__table-footer__30tpt ._index__table-footer-left__2-41l ._index__show-all-data__1ST6D {
+  padding-left: 2rem;
+}
+._index__ui-data-table-tek__2S4Tf ._index__table-footer__30tpt ._index__table-footer-right__3g6aK {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+}
+._index__ui-data-table-tek__2S4Tf ._index__table-footer__30tpt ._index__table-footer-right__3g6aK button {
+  font-weight: bold;
+}
+._index__ui-data-table-tek__2S4Tf ._index__table-footer__30tpt ._index__table-footer-right__3g6aK :hover {
+  color: aliceblue;
+  background-color: #0359da;
+}
+._index__ui-data-table-tek__2S4Tf ._index__table-selected-rows__a3Pc6 {
+  background-color: rgba(3, 89, 218, 0.137254902);
+  padding: 0.01rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+._index__ui-data-table-tek__2S4Tf ._index__table-selected-rows__a3Pc6 p {
+  padding-left: 1rem;
+}
+._index__ui-data-table-tek__2S4Tf ._index__table-selected-rows__a3Pc6 ._index__do-with-selected__1Ea0S {
+  padding-left: 2rem;
+  color: #0359da;
+  font-weight: bold;
+}
+._index__ui-data-table-tek__2S4Tf ._index__table-selected-rows__a3Pc6 ._index__do-with-selected__1Ea0S:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+._index__ui-data-table-tek__2S4Tf svg {
+  color: rgba(43, 129, 214, 0.8117647059);
+}
