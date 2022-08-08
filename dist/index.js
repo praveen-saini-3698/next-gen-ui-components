@@ -1,8 +1,6 @@
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var React = _interopDefault(require('react'));
-var fa = require('react-icons/fa');
-var material = require('@mui/material');
 
 function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
@@ -21,7 +19,117 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
-var styles = {"ui-data-table-tek":"_index-module__ui-data-table-tek__27W74","data-table":"_index-module__data-table__3fMGm","sortable-column":"_index-module__sortable-column__2xDhl","show-pointer":"_index-module__show-pointer__2yfNS","show-global-search":"_index-module__show-global-search__2Sx3R","table-title":"_index-module__table-title__HTXGl","table-footer":"_index-module__table-footer__1V7LX","table-footer-left":"_index-module__table-footer-left__NVrA3","table-footer-left-2":"_index-module__table-footer-left-2__o_eOA","show-all-data":"_index-module__show-all-data__Ve8dK","table-footer-right":"_index-module__table-footer-right__2iwvf","table-selected-rows":"_index-module__table-selected-rows__o5Ukt","do-with-selected":"_index-module__do-with-selected__3BxJo"};
+var styles = {"ui-data-table-tek":"_27W74","data-table":"_3fMGm","sortable-column":"_2xDhl","show-pointer":"_2yfNS","show-global-search":"_2Sx3R","table-title":"_HTXGl","table-footer":"_1V7LX","table-footer-left":"_NVrA3","table-footer-left-2":"_o_eOA","show-all-data":"_Ve8dK","table-footer-right":"_2iwvf","table-selected-rows":"_o5Ukt","do-with-selected":"_3BxJo"};
+
+var DefaultContext = {
+  color: undefined,
+  size: undefined,
+  className: undefined,
+  style: undefined,
+  attr: undefined
+};
+var IconContext = React.createContext && React.createContext(DefaultContext);
+
+var __assign = undefined && undefined.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+
+      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+    }
+
+    return t;
+  };
+
+  return __assign.apply(this, arguments);
+};
+
+var __rest = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+
+function Tree2Element(tree) {
+  return tree && tree.map(function (node, i) {
+    return React.createElement(node.tag, __assign({
+      key: i
+    }, node.attr), Tree2Element(node.child));
+  });
+}
+
+function GenIcon(data) {
+  return function (props) {
+    return React.createElement(IconBase, __assign({
+      attr: __assign({}, data.attr)
+    }, props), Tree2Element(data.child));
+  };
+}
+function IconBase(props) {
+  var elem = function (conf) {
+    var attr = props.attr,
+        size = props.size,
+        title = props.title,
+        svgProps = __rest(props, ["attr", "size", "title"]);
+
+    var computedSize = size || conf.size || "1em";
+    var className;
+    if (conf.className) className = conf.className;
+    if (props.className) className = (className ? className + ' ' : '') + props.className;
+    return React.createElement("svg", __assign({
+      stroke: "currentColor",
+      fill: "currentColor",
+      strokeWidth: "0"
+    }, conf.attr, attr, svgProps, {
+      className: className,
+      style: __assign(__assign({
+        color: props.color || conf.color
+      }, conf.style), props.style),
+      height: computedSize,
+      width: computedSize,
+      xmlns: "http://www.w3.org/2000/svg"
+    }), title && React.createElement("title", null, title), props.children);
+  };
+
+  return IconContext !== undefined ? React.createElement(IconContext.Consumer, null, function (conf) {
+    return elem(conf);
+  }) : elem(DefaultContext);
+}
+
+// THIS FILE IS AUTO GENERATED
+function FaSortDown (props) {
+  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 320 512"},"child":[{"tag":"path","attr":{"d":"M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41z"}}]})(props);
+}function FaSortUp (props) {
+  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 320 512"},"child":[{"tag":"path","attr":{"d":"M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z"}}]})(props);
+}function FaSort (props) {
+  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 320 512"},"child":[{"tag":"path","attr":{"d":"M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"}}]})(props);
+}
+
+var Button = (function (props) {
+  return React.createElement("button", {
+    style: props.style,
+    className: props.className,
+    onClick: props.onClick,
+    disabled: props.disabled,
+    title: props.title
+  }, props.children);
+});
+
+var Checkbox = (function (props) {
+  return React.createElement("input", {
+    type: "checkbox",
+    style: props.style,
+    className: props.className,
+    onClick: props.onClick,
+    disabled: props.disabled,
+    title: props.title
+  }, props.children);
+});
 
 var DataTable = function DataTable(props) {
   var _props$rowPerPage, _props$pagination;
@@ -150,8 +258,8 @@ var DataTable = function DataTable(props) {
       return props !== null && props !== void 0 && props.onSelectedRows ? props.onSelectedRows(selectedRows) : null;
     }
   }, "Do Something ?")))) : undefined, React.createElement("table", {
-    className: props.className + " " + styles['data-table']
-  }, React.createElement("thead", null, React.createElement("tr", null, props.checkbox && React.createElement("th", null, React.createElement(material.Checkbox, {
+    className: "" + (props.className ? props.className.concat(' ') : '') + styles['data-table']
+  }, React.createElement("thead", null, React.createElement("tr", null, props.checkbox && React.createElement("th", null, React.createElement(Checkbox, {
     checked: selectedRows.length > 0 ? true : false,
     onClick: function onClick(event) {
       if (event.target.checked) {
@@ -170,11 +278,11 @@ var DataTable = function DataTable(props) {
       }
     }, column.label, props.sortable && React.createElement("span", {
       className: styles["sortable-column"]
-    }, sortDirection[column.accessor] === "asc" && React.createElement(fa.FaSortDown, null), sortDirection[column.accessor] === "desc" && React.createElement(fa.FaSortUp, null), sortDirection[column.accessor] === null && React.createElement(fa.FaSort, null))));
+    }, sortDirection[column.accessor] === "asc" && React.createElement(FaSortDown, null), sortDirection[column.accessor] === "desc" && React.createElement(FaSortUp, null), sortDirection[column.accessor] === null && React.createElement(FaSort, null))));
   }))), React.createElement("tbody", null, data.map(function (row, index) {
     return React.createElement("tr", {
       key: index
-    }, props.checkbox && React.createElement("td", null, React.createElement(material.Checkbox, {
+    }, props.checkbox && React.createElement("td", null, React.createElement(Checkbox, {
       checked: selectedRows.find(function (selected) {
         return row.id === selected.id;
       }) ? true : false,
@@ -199,7 +307,7 @@ var DataTable = function DataTable(props) {
     className: styles["table-footer-left-2"]
   }, "Showing ", pagination.range.start, " to ", pagination.range.end, " of ", tableData.length, " entries"), props.showAll && React.createElement("div", null, React.createElement("span", {
     className: styles["show-all-data"]
-  }, React.createElement(material.Checkbox, {
+  }, React.createElement(Checkbox, {
     onClick: function onClick(event) {
       if (event.target.checked) {
         setData([].concat(tableData));
@@ -213,7 +321,7 @@ var DataTable = function DataTable(props) {
     }
   }), " Show All"))), React.createElement("div", {
     className: styles["table-footer-right"]
-  }, React.createElement(material.Button, {
+  }, React.createElement(Button, {
     onClick: function onClick() {
       return onPaginationChanged("first");
     },
@@ -221,7 +329,7 @@ var DataTable = function DataTable(props) {
     size: "small",
     color: "primary",
     disabled: pagination.page === 0
-  }, "First"), React.createElement(material.Button, {
+  }, "First"), React.createElement(Button, {
     onClick: function onClick() {
       return onPaginationChanged("prev");
     },
@@ -229,12 +337,12 @@ var DataTable = function DataTable(props) {
     size: "small",
     color: "primary",
     disabled: pagination.page === 0
-  }, "Previous"), React.createElement(material.Button, {
+  }, "Previous"), React.createElement(Button, {
     variant: 'outlined',
     size: "small",
     color: "primary",
     disabled: true
-  }, pagination.page + 1), React.createElement(material.Button, {
+  }, pagination.page + 1), React.createElement(Button, {
     onClick: function onClick() {
       return onPaginationChanged("next");
     },
@@ -242,7 +350,7 @@ var DataTable = function DataTable(props) {
     size: "small",
     color: "primary",
     disabled: pagination.page >= maxPages - 1
-  }, "Next"), React.createElement(material.Button, {
+  }, "Next"), React.createElement(Button, {
     onClick: function onClick() {
       return onPaginationChanged("last");
     },
@@ -257,6 +365,8 @@ var WelcomePage = function WelcomePage(props) {
   return React.createElement("div", null, React.createElement("header", null, props.title), props.children);
 };
 
+exports.Button = Button;
+exports.Checkbox = Checkbox;
 exports.DataTable = DataTable;
 exports.WelcomePage = WelcomePage;
 //# sourceMappingURL=index.js.map

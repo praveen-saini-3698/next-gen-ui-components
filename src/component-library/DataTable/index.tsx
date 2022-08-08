@@ -2,7 +2,8 @@ import styles from './index.module.scss';
 import React from 'react';
 import { FaSort, FaSortUp, FaSortDown } from 'react-icons/fa';
 import { DataTableProps, PaginationOptions, SortTypes } from './types';
-import { Button, Checkbox } from '@mui/material';
+import { default as Button } from './../Button';
+import { default as Checkbox } from './../Checkbox';
 
 export const DataTable = (props: DataTableProps) => {
     const tableData = props.data;
@@ -105,7 +106,7 @@ export const DataTable = (props: DataTableProps) => {
                     </p>
                 </div>
             </div> : undefined}
-            <table className={`${props.className} ${styles['data-table']}`}>
+            <table className={`${props.className ? props.className.concat(' ') : ''}${styles['data-table']}`}>
                 <thead>
                     <tr>
                         {props.checkbox && <th>
