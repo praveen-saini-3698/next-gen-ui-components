@@ -113,13 +113,19 @@ var styles$1 = {"ui-buttons":"_AbjGI","btn":"_1XQnL","btn-check":"_3yaTV","activ
 var Button = (function (props) {
   var _props$className;
 
+  var _props$color = props.color,
+      color = _props$color === void 0 ? 'primary' : _props$color,
+      _props$variant = props.variant,
+      variant = _props$variant === void 0 ? "filled" : _props$variant,
+      _props$size = props.size,
+      size = _props$size === void 0 ? "sm" : _props$size;
   return React.createElement("div", {
     className: styles$1['ui-button'] + " " + ((_props$className = props.className) != null ? _props$className : '')
   }, React.createElement("button", {
     style: props.style,
     onClick: props.onClick,
     disabled: props.disabled,
-    className: styles$1['btn'] + " " + styles$1["btn-" + props.color] + " " + styles$1["btn-" + props.size],
+    className: styles$1['btn'] + " " + styles$1["btn-" + color] + " " + styles$1["btn-" + size] + " " + styles$1["btn-" + variant],
     title: props.title
   }, props.children));
 });
@@ -134,12 +140,13 @@ var Checkbox = (function (props) {
   }, React.createElement("input", {
     type: "checkbox",
     style: props.style,
-    className: 'form-check-input',
+    className: styles$2['form-check-input'],
     onClick: props.onClick,
     disabled: props.disabled,
-    title: props.title
+    title: props.title,
+    checked: props.checked
   }), React.createElement("label", {
-    className: "form-check-label"
+    className: styles$2["form-check-label"]
   }, props.children));
 });
 
