@@ -3,8 +3,7 @@ export interface ButtonProps {
     children?: string | ReactNode;
     title?: string;
     variant?: "filled" | "outlined" | "text";
-    size?: "small" | "medium" | "large";
-    shape?: "round" | "square" | "circle";
+    size?: "sm" | "lg";
     color?: "primary" | "secondary" | "danger" | "success" | "warning";
     onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
     disabled?: boolean;

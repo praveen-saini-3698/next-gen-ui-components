@@ -108,25 +108,39 @@ function FaSortDown (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 320 512"},"child":[{"tag":"path","attr":{"d":"M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"}}]})(props);
 }
 
+var styles$1 = {"ui-buttons":"_AbjGI","btn":"_1XQnL","btn-check":"_3yaTV","active":"_3OWpa","show":"_1vE86","disabled":"_3UNgo","btn-primary":"_2wDIO","btn-secondary":"_2dwTy","btn-success":"_1cK6c","btn-info":"_3_lw7","btn-warning":"_2YfZH","btn-danger":"_1I36B","btn-light":"_YgLAW","btn-dark":"_-cY_C","btn-outline-primary":"_1tk7q","btn-outline-secondary":"_qS70k","btn-outline-success":"_a7-My","btn-outline-info":"_rV9hD","btn-outline-warning":"_1ZA2v","btn-outline-danger":"_3CVr0","btn-outline-light":"_gWEG9","btn-outline-dark":"_wAZ7H","btn-link":"_2vgXB","btn-group-lg":"_3D8gs","btn-lg":"_2Spms","btn-group-sm":"_1XbTr","btn-sm":"_12im-"};
+
 var Button = (function (props) {
-  return React.createElement("button", {
+  var _props$className;
+
+  return React.createElement("div", {
+    className: styles$1['ui-button'] + " " + ((_props$className = props.className) != null ? _props$className : '')
+  }, React.createElement("button", {
     style: props.style,
-    className: props.className,
     onClick: props.onClick,
     disabled: props.disabled,
+    className: styles$1['btn'] + " " + styles$1["btn-" + props.color] + " " + styles$1["btn-" + props.size],
     title: props.title
-  }, props.children);
+  }, props.children));
 });
 
+var styles$2 = {"ui-checkbox":"_bDaIH","form-check":"_jjM_l","form-check-input":"_2-PZA","form-check-reverse":"_3s_S2","form-check-label":"_1dMUQ","form-switch":"_34T52"};
+
 var Checkbox = (function (props) {
-  return React.createElement("input", {
+  var _props$className;
+
+  return React.createElement("div", {
+    className: styles$2['form-check'] + " " + ((_props$className = props.className) != null ? _props$className : '')
+  }, React.createElement("input", {
     type: "checkbox",
     style: props.style,
-    className: props.className,
+    className: 'form-check-input',
     onClick: props.onClick,
     disabled: props.disabled,
     title: props.title
-  }, props.children);
+  }, React.createElement("label", {
+    className: "form-check-label"
+  }, props.children)));
 });
 
 var DataTable = function DataTable(props) {

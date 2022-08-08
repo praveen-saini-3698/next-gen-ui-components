@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save next-gen-react-components
+npm install --save "git+https://praveen-saini-3698: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@github.com/praveen-saini-3698/next-gen-ui-components.git"
 ```
 
 ## Usage
