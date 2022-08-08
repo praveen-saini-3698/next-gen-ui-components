@@ -338,7 +338,7 @@ var DataTable = function DataTable(props) {
       return onPaginationChanged("first");
     },
     variant: 'outlined',
-    size: "small",
+    size: "sm",
     color: "primary",
     disabled: pagination.page === 0
   }, "First"), React.createElement(Button, {
@@ -346,12 +346,12 @@ var DataTable = function DataTable(props) {
       return onPaginationChanged("prev");
     },
     variant: 'outlined',
-    size: "small",
+    size: "sm",
     color: "primary",
     disabled: pagination.page === 0
   }, "Previous"), React.createElement(Button, {
     variant: 'outlined',
-    size: "small",
+    size: "sm",
     color: "primary",
     disabled: true
   }, pagination.page + 1), React.createElement(Button, {
@@ -359,7 +359,7 @@ var DataTable = function DataTable(props) {
       return onPaginationChanged("next");
     },
     variant: 'outlined',
-    size: "small",
+    size: "sm",
     color: "primary",
     disabled: pagination.page >= maxPages - 1
   }, "Next"), React.createElement(Button, {
@@ -367,7 +367,7 @@ var DataTable = function DataTable(props) {
       return onPaginationChanged("last");
     },
     variant: 'outlined',
-    size: "small",
+    size: "sm",
     color: "primary",
     disabled: pagination.page >= maxPages - 1
   }, "Last")))));

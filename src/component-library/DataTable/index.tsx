@@ -178,11 +178,11 @@ export const DataTable = (props: DataTableProps) => {
                         </div>}
                     </div>
                     <div className={styles["table-footer-right"]}>
-                        <Button onClick={() => onPaginationChanged("first")} variant='outlined' size="small" color="primary" disabled={pagination.page === 0}>First</Button>
-                        <Button onClick={() => onPaginationChanged("prev")} variant='outlined' size="small" color="primary" disabled={pagination.page === 0}>Previous</Button>
-                        <Button variant='outlined' size="small" color="primary" disabled>{pagination.page + 1}</Button>
-                        <Button onClick={() => onPaginationChanged("next")} variant='outlined' size="small" color="primary" disabled={pagination.page >= maxPages - 1}>Next</Button>
-                        <Button onClick={() => onPaginationChanged("last")} variant='outlined' size="small" color="primary" disabled={pagination.page >= maxPages - 1}>Last</Button>
+                        <Button onClick={() => onPaginationChanged("first")} variant='outlined' size="sm" color="primary" disabled={pagination.page === 0}>First</Button>
+                        <Button onClick={() => onPaginationChanged("prev")} variant='outlined' size="sm" color="primary" disabled={pagination.page === 0}>Previous</Button>
+                        <Button variant='outlined' size="sm" color="primary" disabled>{pagination.page + 1}</Button>
+                        <Button onClick={() => onPaginationChanged("next")} variant='outlined' size="sm" color="primary" disabled={pagination.page >= maxPages - 1}>Next</Button>
+                        <Button onClick={() => onPaginationChanged("last")} variant='outlined' size="sm" color="primary" disabled={pagination.page >= maxPages - 1}>Last</Button>
                     </div>
                 </div>
             </div>
