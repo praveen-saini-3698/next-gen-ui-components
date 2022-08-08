@@ -13,15 +13,16 @@ npm install --save "git+https://praveen-saini-3698:ghp_xOPQgz9G2vY2oAkHfASka6Hl6
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { MyComponent } from 'next-gen-react-components';
+import 'next-gen-react-components/dist/index.css';
 
-import MyComponent from 'next-gen-react-components'
-import 'next-gen-react-components/dist/index.css'
-
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const Example = () => {
+  return (
+    <>
+      <MyComponent />
+    </>
+  );
 }
 ```
 
