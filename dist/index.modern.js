@@ -324,9 +324,9 @@ var DataTable = function DataTable(props) {
     className: styles["table-footer-left"]
   }, React.createElement("div", {
     className: styles["table-footer-left-2"]
-  }, "Showing ", pagination.range.start, " to ", pagination.range.end, " of ", tableData.length, " entries"), props.showAll && React.createElement("div", null, React.createElement("span", {
+  }, "Showing ", pagination.range.start, " to ", pagination.range.end, " of ", tableData.length, " entries"), props.showAll && React.createElement("div", {
     className: styles["show-all-data"]
-  }, React.createElement(Checkbox, {
+  }, React.createElement("span", null, React.createElement(Checkbox, {
     onClick: function onClick(event) {
       if (event.target.checked) {
         setData([].concat(props.data));

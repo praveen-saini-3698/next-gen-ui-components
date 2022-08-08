@@ -161,8 +161,8 @@ export const DataTable = (props: DataTableProps) => {
                         <div className={styles["table-footer-left-2"]}>
                             Showing {pagination.range.start} to {pagination.range.end} of {tableData.length} entries
                         </div>
-                        {props.showAll && <div>
-                            <span className={styles["show-all-data"]}>
+                        {props.showAll && <div className={styles["show-all-data"]}>
+                            <span>
                                 <Checkbox onClick={(event: any) => {
                                     if (event.target.checked) {
                                         setData([...props.data]);
