@@ -94,7 +94,7 @@
 ._27W74 svg {
   color: rgba(43, 129, 214, 0.8117647059);
 }
-._AbjGI ._1XQnL {
+._2ikbR ._1XQnL {
   --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.375rem;
   --bs-btn-font-family: ;
@@ -130,49 +130,49 @@
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  ._AbjGI ._1XQnL {
+  ._2ikbR ._1XQnL {
     transition: none;
   }
 }
-._AbjGI ._1XQnL:hover {
+._2ikbR ._1XQnL:hover {
   color: var(--bs-btn-hover-color);
   background-color: var(--bs-btn-hover-bg);
   border-color: var(--bs-btn-hover-border-color);
 }
-._AbjGI ._3yaTV:focus + ._1XQnL,
-._AbjGI ._1XQnL:focus {
+._2ikbR ._3yaTV:focus + ._1XQnL,
+._2ikbR ._1XQnL:focus {
   color: var(--bs-btn-hover-color);
   background-color: var(--bs-btn-hover-bg);
   border-color: var(--bs-btn-hover-border-color);
   outline: 0;
   box-shadow: var(--bs-btn-focus-box-shadow);
 }
-._AbjGI ._3yaTV:active + ._1XQnL,
-._AbjGI ._3yaTV:checked + ._1XQnL,
-._AbjGI ._1XQnL._3OWpa,
-._AbjGI ._1XQnL._1vE86,
-._AbjGI ._1XQnL:active {
+._2ikbR ._3yaTV:active + ._1XQnL,
+._2ikbR ._3yaTV:checked + ._1XQnL,
+._2ikbR ._1XQnL._3OWpa,
+._2ikbR ._1XQnL._1vE86,
+._2ikbR ._1XQnL:active {
   color: var(--bs-btn-active-color);
   background-color: var(--bs-btn-active-bg);
   border-color: var(--bs-btn-active-border-color);
 }
-._AbjGI ._3yaTV:active + ._1XQnL:focus,
-._AbjGI ._3yaTV:checked + ._1XQnL:focus,
-._AbjGI ._1XQnL._3OWpa:focus,
-._AbjGI ._1XQnL._1vE86:focus,
-._AbjGI ._1XQnL:active:focus {
+._2ikbR ._3yaTV:active + ._1XQnL:focus,
+._2ikbR ._3yaTV:checked + ._1XQnL:focus,
+._2ikbR ._1XQnL._3OWpa:focus,
+._2ikbR ._1XQnL._1vE86:focus,
+._2ikbR ._1XQnL:active:focus {
   box-shadow: var(--bs-btn-focus-box-shadow);
 }
-._AbjGI ._1XQnL._3UNgo,
-._AbjGI ._1XQnL:disabled,
-._AbjGI fieldset:disabled ._1XQnL {
+._2ikbR ._1XQnL._3UNgo,
+._2ikbR ._1XQnL:disabled,
+._2ikbR fieldset:disabled ._1XQnL {
   color: var(--bs-btn-disabled-color);
   pointer-events: none;
   background-color: var(--bs-btn-disabled-bg);
   border-color: var(--bs-btn-disabled-border-color);
   opacity: var(--bs-btn-disabled-opacity);
 }
-._AbjGI ._2wDIO {
+._2ikbR ._2wDIO {
   --bs-btn-color: #fff;
   --bs-btn-bg: #0d6efd;
   --bs-btn-border-color: #0d6efd;
@@ -188,7 +188,7 @@
   --bs-btn-disabled-bg: #0d6efd;
   --bs-btn-disabled-border-color: #0d6efd;
 }
-._AbjGI ._2dwTy {
+._2ikbR ._2dwTy {
   --bs-btn-color: #fff;
   --bs-btn-bg: #6c757d;
   --bs-btn-border-color: #6c757d;
@@ -204,7 +204,7 @@
   --bs-btn-disabled-bg: #6c757d;
   --bs-btn-disabled-border-color: #6c757d;
 }
-._AbjGI ._1cK6c {
+._2ikbR ._1cK6c {
   --bs-btn-color: #fff;
   --bs-btn-bg: #198754;
   --bs-btn-border-color: #198754;
@@ -220,7 +220,7 @@
   --bs-btn-disabled-bg: #198754;
   --bs-btn-disabled-border-color: #198754;
 }
-._AbjGI ._3_lw7 {
+._2ikbR ._3_lw7 {
   --bs-btn-color: #000;
   --bs-btn-bg: #0dcaf0;
   --bs-btn-border-color: #0dcaf0;
@@ -236,7 +236,7 @@
   --bs-btn-disabled-bg: #0dcaf0;
   --bs-btn-disabled-border-color: #0dcaf0;
 }
-._AbjGI ._2YfZH {
+._2ikbR ._2YfZH {
   --bs-btn-color: #000;
   --bs-btn-bg: #ffc107;
   --bs-btn-border-color: #ffc107;
@@ -252,7 +252,7 @@
   --bs-btn-disabled-bg: #ffc107;
   --bs-btn-disabled-border-color: #ffc107;
 }
-._AbjGI ._1I36B {
+._2ikbR ._1I36B {
   --bs-btn-color: #fff;
   --bs-btn-bg: #dc3545;
   --bs-btn-border-color: #dc3545;
@@ -268,7 +268,7 @@
   --bs-btn-disabled-bg: #dc3545;
   --bs-btn-disabled-border-color: #dc3545;
 }
-._AbjGI ._YgLAW {
+._2ikbR ._YgLAW {
   --bs-btn-color: #000;
   --bs-btn-bg: #f8f9fa;
   --bs-btn-border-color: #f8f9fa;
@@ -284,7 +284,7 @@
   --bs-btn-disabled-bg: #f8f9fa;
   --bs-btn-disabled-border-color: #f8f9fa;
 }
-._AbjGI ._-cY_C {
+._2ikbR ._-cY_C {
   --bs-btn-color: #fff;
   --bs-btn-bg: #212529;
   --bs-btn-border-color: #212529;
@@ -300,7 +300,7 @@
   --bs-btn-disabled-bg: #212529;
   --bs-btn-disabled-border-color: #212529;
 }
-._AbjGI ._1tk7q {
+._2ikbR ._1tk7q {
   --bs-btn-color: #0d6efd;
   --bs-btn-border-color: #0d6efd;
   --bs-btn-hover-color: #fff;
@@ -316,7 +316,7 @@
   --bs-btn-disabled-border-color: #0d6efd;
   --bs-gradient: none;
 }
-._AbjGI ._qS70k {
+._2ikbR ._qS70k {
   --bs-btn-color: #6c757d;
   --bs-btn-border-color: #6c757d;
   --bs-btn-hover-color: #fff;
@@ -332,7 +332,7 @@
   --bs-btn-disabled-border-color: #6c757d;
   --bs-gradient: none;
 }
-._AbjGI ._a7-My {
+._2ikbR ._a7-My {
   --bs-btn-color: #198754;
   --bs-btn-border-color: #198754;
   --bs-btn-hover-color: #fff;
@@ -348,7 +348,7 @@
   --bs-btn-disabled-border-color: #198754;
   --bs-gradient: none;
 }
-._AbjGI ._rV9hD {
+._2ikbR ._rV9hD {
   --bs-btn-color: #0dcaf0;
   --bs-btn-border-color: #0dcaf0;
   --bs-btn-hover-color: #000;
@@ -364,7 +364,7 @@
   --bs-btn-disabled-border-color: #0dcaf0;
   --bs-gradient: none;
 }
-._AbjGI ._1ZA2v {
+._2ikbR ._1ZA2v {
   --bs-btn-color: #ffc107;
   --bs-btn-border-color: #ffc107;
   --bs-btn-hover-color: #000;
@@ -380,7 +380,7 @@
   --bs-btn-disabled-border-color: #ffc107;
   --bs-gradient: none;
 }
-._AbjGI ._3CVr0 {
+._2ikbR ._3CVr0 {
   --bs-btn-color: #dc3545;
   --bs-btn-border-color: #dc3545;
   --bs-btn-hover-color: #fff;
@@ -396,7 +396,7 @@
   --bs-btn-disabled-border-color: #dc3545;
   --bs-gradient: none;
 }
-._AbjGI ._gWEG9 {
+._2ikbR ._gWEG9 {
   --bs-btn-color: #f8f9fa;
   --bs-btn-border-color: #f8f9fa;
   --bs-btn-hover-color: #000;
@@ -412,7 +412,7 @@
   --bs-btn-disabled-border-color: #f8f9fa;
   --bs-gradient: none;
 }
-._AbjGI ._wAZ7H {
+._2ikbR ._wAZ7H {
   --bs-btn-color: #212529;
   --bs-btn-border-color: #212529;
   --bs-btn-hover-color: #fff;
@@ -428,7 +428,7 @@
   --bs-btn-disabled-border-color: #212529;
   --bs-gradient: none;
 }
-._AbjGI ._2vgXB {
+._2ikbR ._2vgXB {
   --bs-btn-font-weight: 400;
   --bs-btn-color: var(--bs-link-color);
   --bs-btn-bg: transparent;
@@ -443,21 +443,21 @@
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
   text-decoration: underline;
 }
-._AbjGI ._2vgXB:focus {
+._2ikbR ._2vgXB:focus {
   color: var(--bs-btn-color);
 }
-._AbjGI ._2vgXB:hover {
+._2ikbR ._2vgXB:hover {
   color: var(--bs-btn-hover-color);
 }
-._AbjGI ._3D8gs > ._1XQnL,
-._AbjGI ._2Spms {
+._2ikbR ._3D8gs > ._1XQnL,
+._2ikbR ._2Spms {
   --bs-btn-padding-y: 0.5rem;
   --bs-btn-padding-x: 1rem;
   --bs-btn-font-size: 1.25rem;
   --bs-btn-border-radius: 0.5rem;
 }
-._AbjGI ._1XbTr > ._1XQnL,
-._AbjGI ._12im- {
+._2ikbR ._1XbTr > ._1XQnL,
+._2ikbR ._12im- {
   --bs-btn-padding-y: 0.25rem;
   --bs-btn-padding-x: 0.5rem;
   --bs-btn-font-size: 0.875rem;

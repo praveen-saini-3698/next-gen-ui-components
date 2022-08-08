@@ -173,7 +173,9 @@ export const DataTable = (props: DataTableProps) => {
                                         setPagination({ ...pagination });
                                         setData(tableData.slice(pagination.range.start - 1, pagination.range.end));
                                     }
-                                }} /> Show All
+                                }}>
+                                    Show All
+                                </Checkbox>
                             </span>
                         </div>}
                     </div>

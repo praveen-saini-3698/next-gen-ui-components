@@ -110,7 +110,7 @@ function FaSortDown (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 320 512"},"child":[{"tag":"path","attr":{"d":"M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"}}]})(props);
 }
 
-var styles$1 = {"ui-buttons":"_AbjGI","btn":"_1XQnL","btn-check":"_3yaTV","active":"_3OWpa","show":"_1vE86","disabled":"_3UNgo","btn-primary":"_2wDIO","btn-secondary":"_2dwTy","btn-success":"_1cK6c","btn-info":"_3_lw7","btn-warning":"_2YfZH","btn-danger":"_1I36B","btn-light":"_YgLAW","btn-dark":"_-cY_C","btn-outline-primary":"_1tk7q","btn-outline-secondary":"_qS70k","btn-outline-success":"_a7-My","btn-outline-info":"_rV9hD","btn-outline-warning":"_1ZA2v","btn-outline-danger":"_3CVr0","btn-outline-light":"_gWEG9","btn-outline-dark":"_wAZ7H","btn-link":"_2vgXB","btn-group-lg":"_3D8gs","btn-lg":"_2Spms","btn-group-sm":"_1XbTr","btn-sm":"_12im-"};
+var styles$1 = {"ui-button":"_2ikbR","btn":"_1XQnL","btn-check":"_3yaTV","active":"_3OWpa","show":"_1vE86","disabled":"_3UNgo","btn-primary":"_2wDIO","btn-secondary":"_2dwTy","btn-success":"_1cK6c","btn-info":"_3_lw7","btn-warning":"_2YfZH","btn-danger":"_1I36B","btn-light":"_YgLAW","btn-dark":"_-cY_C","btn-outline-primary":"_1tk7q","btn-outline-secondary":"_qS70k","btn-outline-success":"_a7-My","btn-outline-info":"_rV9hD","btn-outline-warning":"_1ZA2v","btn-outline-danger":"_3CVr0","btn-outline-light":"_gWEG9","btn-outline-dark":"_wAZ7H","btn-link":"_2vgXB","btn-group-lg":"_3D8gs","btn-lg":"_2Spms","btn-group-sm":"_1XbTr","btn-sm":"_12im-"};
 
 var Button = (function (props) {
   var _props$className;
@@ -340,7 +340,7 @@ var DataTable = function DataTable(props) {
         setData(tableData.slice(pagination.range.start - 1, pagination.range.end));
       }
     }
-  }), " Show All"))), React.createElement("div", {
+  }, "Show All")))), React.createElement("div", {
     className: styles["table-footer-right"]
   }, React.createElement(Button, {
     onClick: function onClick() {
