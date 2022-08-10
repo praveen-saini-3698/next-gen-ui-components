@@ -4,6 +4,7 @@
   .data-table {
     width: 100%;
     text-align: center;
+    border-spacing: 0px;
 
     thead {
       background-color: rgb(183 211 253);
@@ -11,8 +12,10 @@
 
       tr {
         th {
+          padding-top: .8rem;
+          padding-bottom: .5em;
           font-weight: bold;
-          border-bottom: 1px solid lightslategray;
+          border-bottom: 2px solid lightslategray;
           padding-bottom: .5rem;
 
           .sortable-column {
@@ -21,20 +24,45 @@
           }
         }
       }
+    }
+
+    tbody {
+      td {
+        padding: 0.4rem;
+      }
 
       tr:nth-child(even) {
         background-color: rgb(231 240 255);
         color: #383838;
       }
-    }
 
-    tbody {
-      tr {
-        background-color: rgb(231 240 255);
-        color: #383838;
+      tr:hover {
+        color: rgb(0, 102, 255);
+        cursor: pointer;
+      }
+
+      .action-buttons {
+        display: flex;
+        justify-content: space-evenly;
+
+        .trash {
+          color: rgb(253, 82, 82);
+        }
+
+        .edit:hover {
+          color: rgb(0, 87, 218);
+        }
+
+        .trash:hover {
+          color: rgb(252, 24, 24);
+        }
       }
     }
 
+  }
+
+  .bordered {
+    border-spacing: 2px;
   }
 
   .show-pointer {
@@ -65,7 +93,7 @@
   }
 
   .table-footer {
-    border-top: 1px solid;
+    border-top: 2px solid gray;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -94,9 +122,18 @@
     .table-footer-right {
       display: flex;
       justify-content: space-evenly;
-      width: 50%;
+      width: 30%;
 
       button {
+        font-weight: bold;
+      }
+
+      .current-page {
+        border: 1px solid #0d6efd;
+        padding: 4px;
+        border-radius: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
         font-weight: bold;
       }
     }
@@ -104,7 +141,7 @@
 
   .table-selected-rows {
     background-color: #0359da23;
-    padding: 0.01rem;
+    margin-top: 0.5rem;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;

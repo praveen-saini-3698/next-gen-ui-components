@@ -1,4 +1,6 @@
 import React from 'react';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
@@ -17,7 +19,7 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
-var styles = {"ui-data-table-tek":"_27W74","data-table":"_3fMGm","sortable-column":"_2xDhl","show-pointer":"_2yfNS","show-global-search":"_2Sx3R","table-title":"_HTXGl","table-footer":"_1V7LX","table-footer-left":"_NVrA3","table-footer-left-2":"_o_eOA","show-all-data":"_Ve8dK","table-footer-right":"_2iwvf","table-selected-rows":"_o5Ukt","do-with-selected":"_3BxJo"};
+var styles = {"ui-data-table-tek":"_27W74","data-table":"_3fMGm","sortable-column":"_2xDhl","action-buttons":"_3Bd-C","trash":"_1hW9J","edit":"_2PEg8","bordered":"_3y7kh","show-pointer":"_2yfNS","show-global-search":"_2Sx3R","table-title":"_HTXGl","table-footer":"_1V7LX","table-footer-left":"_NVrA3","table-footer-left-2":"_o_eOA","show-all-data":"_Ve8dK","table-footer-right":"_2iwvf","current-page":"_teB0r","table-selected-rows":"_o5Ukt","do-with-selected":"_3BxJo"};
 
 var DefaultContext = {
   color: undefined,
@@ -100,12 +102,16 @@ function IconBase(props) {
 }
 
 // THIS FILE IS AUTO GENERATED
-function FaSortDown (props) {
+function FaEdit (props) {
+  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 576 512"},"child":[{"tag":"path","attr":{"d":"M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"}}]})(props);
+}function FaSortDown (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 320 512"},"child":[{"tag":"path","attr":{"d":"M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41z"}}]})(props);
 }function FaSortUp (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 320 512"},"child":[{"tag":"path","attr":{"d":"M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z"}}]})(props);
 }function FaSort (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 320 512"},"child":[{"tag":"path","attr":{"d":"M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"}}]})(props);
+}function FaTrash (props) {
+  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 448 512"},"child":[{"tag":"path","attr":{"d":"M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"}}]})(props);
 }
 
 var styles$1 = {"ui-button":"_2ikbR","btn":"_1XQnL","btn-check":"_3yaTV","active":"_3OWpa","show":"_1vE86","disabled":"_3UNgo","btn-primary":"_2wDIO","btn-secondary":"_2dwTy","btn-success":"_1cK6c","btn-info":"_3_lw7","btn-warning":"_2YfZH","btn-danger":"_1I36B","btn-light":"_YgLAW","btn-dark":"_-cY_C","btn-outline-primary":"_1tk7q","btn-outline-secondary":"_qS70k","btn-outline-success":"_a7-My","btn-outline-info":"_rV9hD","btn-outline-warning":"_1ZA2v","btn-outline-danger":"_3CVr0","btn-outline-light":"_gWEG9","btn-outline-dark":"_wAZ7H","btn-link":"_2vgXB","btn-group-lg":"_3D8gs","btn-lg":"_2Spms","btn-group-sm":"_1XbTr","btn-sm":"_12im-"};
@@ -240,6 +246,35 @@ var DataTable = function DataTable(props) {
     setData([].concat(tableData.slice(pagination.range.start, pagination.range.end)));
   };
 
+  var onDelete = function onDelete(event, row, index) {
+    confirmAlert({
+      title: 'Confirm to delete',
+      message: 'Are you sure to delete this ?',
+      buttons: [{
+        label: 'Yes',
+        style: {
+          backgroundColor: 'rgb(0, 102, 255)'
+        },
+        onClick: function onClick() {
+          var _tableData$find;
+
+          var rowDetails = _extends({}, row);
+
+          var actualIndex = (_tableData$find = tableData.find(function (rw) {
+            return rw.id === row.id;
+          })) === null || _tableData$find === void 0 ? void 0 : _tableData$find.id;
+          tableData.splice(actualIndex, 1);
+          data.splice(index, 1);
+          setData([].concat(data));
+          return props.onDelete ? props.onDelete(event, rowDetails) : undefined;
+        }
+      }, {
+        label: 'No',
+        onClick: function onClick() {}
+      }]
+    });
+  };
+
   var onSearch = function onSearch(value) {
     setSearchableText(value);
     var filter = tableData.filter(function (row) {
@@ -269,15 +304,8 @@ var DataTable = function DataTable(props) {
     onChange: function onChange(event) {
       return onSearch(event.target.value);
     }
-  }))), selectedRows.length ? React.createElement("div", {
-    className: styles["table-selected-rows"]
-  }, React.createElement("div", null, React.createElement("p", null, selectedRows.length, " Rows selected", React.createElement("span", {
-    className: styles["do-with-selected"],
-    onClick: function onClick() {
-      return props !== null && props !== void 0 && props.onSelectedRows ? props.onSelectedRows(selectedRows) : null;
-    }
-  }, "Do Something ?")))) : undefined, React.createElement("table", {
-    className: "" + (props.className ? props.className.concat(' ') : '') + styles['data-table']
+  }))), React.createElement("table", {
+    className: ("" + (props.className ? props.className.concat(' ') : '') + styles['data-table'] + " " + (props.bordered ? " " + styles['bordered'] : '')).trim()
   }, React.createElement("thead", null, React.createElement("tr", null, props.checkbox && React.createElement("th", null, React.createElement(Checkbox, {
     checked: selectedRows.length > 0 ? true : false,
     onClick: function onClick(event) {
@@ -298,7 +326,7 @@ var DataTable = function DataTable(props) {
     }, column.label, props.sortable && React.createElement("span", {
       className: styles["sortable-column"]
     }, sortDirection[column.accessor] === "asc" && React.createElement(FaSortDown, null), sortDirection[column.accessor] === "desc" && React.createElement(FaSortUp, null), sortDirection[column.accessor] === null && React.createElement(FaSort, null))));
-  }))), React.createElement("tbody", null, data.map(function (row, index) {
+  }), (props.showEdit || props.showDelete) && React.createElement("th", null, "Action"))), React.createElement("tbody", null, data.length && data.map(function (row, index) {
     return React.createElement("tr", {
       key: index
     }, props.checkbox && React.createElement("td", null, React.createElement(Checkbox, {
@@ -317,7 +345,19 @@ var DataTable = function DataTable(props) {
       return React.createElement("td", {
         key: column.accessor + index
       }, row[column.accessor]);
-    }));
+    }), (props.showDelete || props.showEdit) && React.createElement("td", {
+      className: styles['action-buttons']
+    }, props.showEdit && React.createElement(FaEdit, {
+      onClick: function onClick(e) {
+        return props.onEdit ? props.onEdit(e, row) : undefined;
+      },
+      className: styles['edit']
+    }), props.showDelete && React.createElement(FaTrash, {
+      onClick: function onClick(e) {
+        return onDelete(e, row, index);
+      },
+      className: styles['trash']
+    })));
   }))), React.createElement("div", null, React.createElement("div", {
     className: styles["table-footer"]
   }, React.createElement("div", {
@@ -329,13 +369,13 @@ var DataTable = function DataTable(props) {
   }, React.createElement("span", null, React.createElement(Checkbox, {
     onClick: function onClick(event) {
       if (event.target.checked) {
-        setData([].concat(props.data));
+        setData([].concat(tableData));
         pagination.range.end = tableData.length;
         setPagination(_extends({}, pagination));
       } else {
         pagination.range.end = rowPerPage;
         setPagination(_extends({}, pagination));
-        setData(props.data.slice(pagination.range.start - 1, pagination.range.end));
+        setData([].concat(tableData.slice(pagination.range.start - 1, pagination.range.end)));
       }
     }
   }, "Show All")))), React.createElement("div", {
@@ -356,11 +396,8 @@ var DataTable = function DataTable(props) {
     size: "sm",
     color: "primary",
     disabled: pagination.page === 0
-  }, "Previous"), React.createElement(Button, {
-    variant: 'outlined',
-    size: "sm",
-    color: "primary",
-    disabled: true
+  }, "Previous"), React.createElement("div", {
+    className: styles['current-page']
   }, pagination.page + 1), React.createElement(Button, {
     onClick: function onClick() {
       return onPaginationChanged("next");
@@ -377,7 +414,14 @@ var DataTable = function DataTable(props) {
     size: "sm",
     color: "primary",
     disabled: pagination.page >= maxPages - 1
-  }, "Last")))));
+  }, "Last")))), selectedRows.length ? React.createElement("div", {
+    className: styles["table-selected-rows"]
+  }, React.createElement("div", null, React.createElement("p", null, selectedRows.length, " Rows selected", React.createElement("span", {
+    className: styles["do-with-selected"],
+    onClick: function onClick() {
+      return props !== null && props !== void 0 && props.onSelectedRows ? props.onSelectedRows(selectedRows) : null;
+    }
+  }, "Do Something ?")))) : undefined);
 };
 
 var WelcomePage = function WelcomePage(props) {

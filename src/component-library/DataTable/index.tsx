@@ -1,11 +1,14 @@
 import styles from './index.module.scss';
 import React from 'react';
-import { FaSort, FaSortUp, FaSortDown } from 'react-icons/fa';
-import { DataTableProps, PaginationOptions, SortTypes } from './types';
+import { FaSort, FaSortUp, FaSortDown, FaEdit, FaTrash } from 'react-icons/fa';
+import { DataTableDataOptions, DataTableProps, PaginationOptions, SortTypes } from './types';
 import { default as Button } from './../Button';
 import { default as Checkbox } from './../Checkbox';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 export const DataTable = (props: DataTableProps) => {
+
     const tableData = [...props.data];
     const [columns] = React.useState(props.columns);
     const [selectedRows, setSelectedRows] = React.useState<Array<{ [key: string]: any }>>([]);
@@ -67,6 +70,33 @@ export const DataTable = (props: DataTableProps) => {
         setData([...tableData.slice(pagination.range.start, pagination.range.end)]);
     };
 
+    const onDelete = (event: React.MouseEvent<SVGElement, MouseEvent>, row: DataTableDataOptions, index: number) => {
+        confirmAlert({
+            title: 'Confirm to delete',
+            message: 'Are you sure to delete this ?',
+            buttons: [
+                {
+                    label: 'Yes',
+                    style: {
+                        backgroundColor: 'rgb(0, 102, 255)',
+                    },
+                    onClick: () => {
+                        const rowDetails = { ...row };
+                        const actualIndex = tableData.find(rw => rw.id === row.id)?.id as number;
+                        tableData.splice(actualIndex, 1);
+                        data.splice(index, 1);
+                        setData([...data]);
+                        return props.onDelete ? props.onDelete(event, rowDetails) : undefined;
+                    },
+                },
+                {
+                    label: 'No',
+                    onClick: () => { }
+                }
+            ]
+        });
+    };
+
     const onSearch = (value: string) => {
         setSearchableText(value);
         const filter = tableData.filter(row => JSON.stringify(row).toLowerCase().match(value.toLowerCase())).slice(0, pagination.rowPerPage);
@@ -96,17 +126,7 @@ export const DataTable = (props: DataTableProps) => {
                     />
                 </div>
             </div>
-            {selectedRows.length ? <div className={styles["table-selected-rows"]}>
-                <div>
-                    <p>
-                        {selectedRows.length} Rows selected
-                        <span className={styles["do-with-selected"]} onClick={() => props?.onSelectedRows ? props.onSelectedRows(selectedRows) : null}>
-                            Do Something ?
-                        </span>
-                    </p>
-                </div>
-            </div> : undefined}
-            <table className={`${props.className ? props.className.concat(' ') : ''}${styles['data-table']}`}>
+            <table className={`${props.className ? props.className.concat(' ') : ''}${styles['data-table']} ${props.bordered ? ` ${styles['bordered']}` : ''}`.trim()}>
                 <thead>
                     <tr>
                         {props.checkbox && <th>
@@ -131,10 +151,11 @@ export const DataTable = (props: DataTableProps) => {
                                 </span>}
                             </div>
                         </th>)}
+                        {(props.showEdit || props.showDelete) && <th>Action</th>}
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map((row, index) => <tr key={index}>
+                    {data.length && data.map((row, index) => <tr key={index}>
                         {props.checkbox && <td>
                             <Checkbox
                                 checked={selectedRows.find(selected => row.id === selected.id) ? true : false}
@@ -152,6 +173,10 @@ export const DataTable = (props: DataTableProps) => {
                         {columns.map(column => <td key={column.accessor + index}>
                             {row[column.accessor]}
                         </td>)}
+                        {(props.showDelete || props.showEdit) && <td className={styles['action-buttons']}>
+                            {props.showEdit && <FaEdit onClick={e => props.onEdit ? props.onEdit(e, row) : undefined} className={styles['edit']} />}
+                            {props.showDelete && <FaTrash onClick={e => onDelete(e, row, index)} className={styles['trash']} />}
+                        </td>}
                     </tr>)}
                 </tbody>
             </table>
@@ -165,13 +190,13 @@ export const DataTable = (props: DataTableProps) => {
                             <span>
                                 <Checkbox onClick={(event: any) => {
                                     if (event.target.checked) {
-                                        setData([...props.data]);
+                                        setData([...tableData]);
                                         pagination.range.end = tableData.length;
                                         setPagination({ ...pagination });
                                     } else {
                                         pagination.range.end = rowPerPage;
                                         setPagination({ ...pagination });
-                                        setData(props.data.slice(pagination.range.start - 1, pagination.range.end));
+                                        setData([...tableData.slice(pagination.range.start - 1, pagination.range.end)]);
                                     }
                                 }}>
                                     Show All
@@ -182,12 +207,22 @@ export const DataTable = (props: DataTableProps) => {
                     <div className={styles["table-footer-right"]}>
                         <Button onClick={() => onPaginationChanged("first")} variant='outlined' size="sm" color="primary" disabled={pagination.page === 0}>First</Button>
                         <Button onClick={() => onPaginationChanged("prev")} variant='outlined' size="sm" color="primary" disabled={pagination.page === 0}>Previous</Button>
-                        <Button variant='outlined' size="sm" color="primary" disabled>{pagination.page + 1}</Button>
+                        <div className={styles['current-page']}>{pagination.page + 1}</div>
                         <Button onClick={() => onPaginationChanged("next")} variant='outlined' size="sm" color="primary" disabled={pagination.page >= maxPages - 1}>Next</Button>
                         <Button onClick={() => onPaginationChanged("last")} variant='outlined' size="sm" color="primary" disabled={pagination.page >= maxPages - 1}>Last</Button>
                     </div>
                 </div>
             </div>
+            {selectedRows.length ? <div className={styles["table-selected-rows"]}>
+                <div>
+                    <p>
+                        {selectedRows.length} Rows selected
+                        <span className={styles["do-with-selected"]} onClick={() => props?.onSelectedRows ? props.onSelectedRows(selectedRows) : null}>
+                            Do Something ?
+                        </span>
+                    </p>
+                </div>
+            </div> : undefined}
         </div>
     )
 }

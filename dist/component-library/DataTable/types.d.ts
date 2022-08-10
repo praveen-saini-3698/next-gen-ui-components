@@ -31,4 +31,10 @@ export interface DataTableProps {
     onSelectedRows?: CallableFunction;
     rowPerPage?: number;
     showAll?: boolean;
+    bordered?: boolean;
+    showEdit?: boolean;
+    showDelete?: boolean;
+    onEdit?: (event: React.MouseEvent<SVGElement, MouseEvent>, row: DataTableDataOptions) => void;
+    onDelete?: (event: React.MouseEvent<SVGElement, MouseEvent>, row: DataTableDataOptions) => void;
+    onSelect?: CallableFunction;
 }
