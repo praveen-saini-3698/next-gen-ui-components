@@ -1,6 +1,7 @@
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import React from 'react';
 import { confirmAlert } from 'react-confirm-alert';
-import 'react-confirm-alert/src/react-confirm-alert.css';
+export { confirmAlert as ConfirmationAlert } from 'react-confirm-alert';
 
 function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
@@ -156,7 +157,7 @@ var Checkbox = (function (props) {
   }, props.children));
 });
 
-var DataTable = function DataTable(props) {
+var index = (function (props) {
   var _props$rowPerPage, _props$pagination;
 
   var tableData = [].concat(props.data);
@@ -422,11 +423,11 @@ var DataTable = function DataTable(props) {
       return props !== null && props !== void 0 && props.onSelectedRows ? props.onSelectedRows(selectedRows) : null;
     }
   }, "Do Something ?")))) : undefined);
-};
+});
 
-var WelcomePage = function WelcomePage(props) {
+var index$1 = (function (props) {
   return React.createElement("div", null, React.createElement("header", null, props.title), props.children);
-};
+});
 
-export { Button, Checkbox, DataTable, WelcomePage };
+export { Button, Checkbox, index as DataTable, index$1 as WelcomePage };
 //# sourceMappingURL=index.modern.js.map

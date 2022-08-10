@@ -1,8 +1,8 @@
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
+require('react-confirm-alert/src/react-confirm-alert.css');
 var React = _interopDefault(require('react'));
 var reactConfirmAlert = require('react-confirm-alert');
-require('react-confirm-alert/src/react-confirm-alert.css');
 
 function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
@@ -158,7 +158,7 @@ var Checkbox = (function (props) {
   }, props.children));
 });
 
-var DataTable = function DataTable(props) {
+var index = (function (props) {
   var _props$rowPerPage, _props$pagination;
 
   var tableData = [].concat(props.data);
@@ -424,14 +424,20 @@ var DataTable = function DataTable(props) {
       return props !== null && props !== void 0 && props.onSelectedRows ? props.onSelectedRows(selectedRows) : null;
     }
   }, "Do Something ?")))) : undefined);
-};
+});
 
-var WelcomePage = function WelcomePage(props) {
+var index$1 = (function (props) {
   return React.createElement("div", null, React.createElement("header", null, props.title), props.children);
-};
+});
 
+Object.defineProperty(exports, 'ConfirmationAlert', {
+  enumerable: true,
+  get: function () {
+    return reactConfirmAlert.confirmAlert;
+  }
+});
 exports.Button = Button;
 exports.Checkbox = Checkbox;
-exports.DataTable = DataTable;
-exports.WelcomePage = WelcomePage;
+exports.DataTable = index;
+exports.WelcomePage = index$1;
 //# sourceMappingURL=index.js.map

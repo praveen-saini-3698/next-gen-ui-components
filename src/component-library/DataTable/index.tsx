@@ -7,7 +7,7 @@ import { default as Checkbox } from './../Checkbox';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
-export const DataTable = (props: DataTableProps) => {
+export default (props: DataTableProps) => {
 
     const tableData = [...props.data];
     const [columns] = React.useState(props.columns);
