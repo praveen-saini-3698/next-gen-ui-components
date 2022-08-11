@@ -2,3 +2,4 @@ export type { DataTableProps, PaginationOptions, SortTypes, DataTableColumnOptio
 export type { WelcomePageProps } from './component-library/WelcomePage/types';
 export type { CheckboxProps } from './component-library/Checkbox/types';
 export type { ReactConfirmAlertProps } from 'react-confirm-alert';
+export type { RecordViewProps, RecordOptions, RecordValueType } from './component-library/RecordView/types';

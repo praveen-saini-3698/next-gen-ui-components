@@ -45,6 +45,15 @@
 ._27W74 ._3fMGm tbody ._3Bd-C ._1hW9J:hover {
   color: rgb(252, 24, 24);
 }
+._27W74 ._3fMGm tbody ._2f_oI {
+  text-align: center;
+  font-weight: bold;
+  color: rgb(253, 82, 82);
+}
+._27W74 ._3fMGm tbody ._2f_oI:hover {
+  color: rgb(253, 82, 82);
+  cursor: default;
+}
 ._27W74 ._3y7kh {
   border-spacing: 2px;
 }
@@ -601,4 +610,64 @@
 ._bDaIH ._34T52._3s_S2 ._2-PZA {
   margin-right: -2.5em;
   margin-left: 0;
+}
+._hVJWn {
+  background-color: white;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 10px;
+  padding-bottom: 1rem;
+}
+._hVJWn ._2xWsK {
+  text-align: left;
+  font-size: x-large;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #efefef;
+  margin-bottom: 1rem;
+}
+._hVJWn ._1BH2o {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: stretch;
+}
+._hVJWn ._1BH2o ._3i9ES {
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+  padding: 0.2rem;
+}
+._hVJWn ._1BH2o ._3i9ES ._DcATi {
+  font-weight: 400;
+}
+._hVJWn ._1BH2o ._3i9ES ._2pZVI {
+  font-weight: 500;
+  color: rgb(43, 43, 43);
+}
+._hVJWn ._dhgW7 {
+  width: 30%;
+  border: 1px solid gray;
+  border-radius: 6px;
+  text-align: left;
+  margin: 0.3rem;
+}
+._hVJWn ._dhgW7 ._DcATi {
+  margin-top: -10px;
+  font-size: 12px;
+  margin-left: 10px;
+}
+._hVJWn ._dhgW7 ._DcATi label {
+  background-color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: bold;
+}
+._hVJWn ._dhgW7 ._2pZVI {
+  padding: 5px;
+  margin-left: 10px;
+  margin-bottom: 3px;
+  font-size: large;
+  font-weight: 400;
 }

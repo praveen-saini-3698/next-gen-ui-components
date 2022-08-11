@@ -101,6 +101,7 @@ export default (props: DataTableProps) => {
         setSearchableText(value);
         const filter = tableData.filter(row => JSON.stringify(row).toLowerCase().match(value.toLowerCase())).slice(0, pagination.rowPerPage);
         setData([...filter]);
+        if (props.onSearch) props.onSearch(value);
     };
 
     const onSorting = (type: string, direction: SortTypes) => {
@@ -155,7 +156,7 @@ export default (props: DataTableProps) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.length && data.map((row, index) => <tr key={index}>
+                    {data.length ? data.map((row, index) => <tr key={index} onClick={e => props.onRowClick ? props.onRowClick(e, { ...row }) : undefined}>
                         {props.checkbox && <td>
                             <Checkbox
                                 checked={selectedRows.find(selected => row.id === selected.id) ? true : false}
@@ -170,21 +171,25 @@ export default (props: DataTableProps) => {
                                 color="primary"
                             />
                         </td>}
-                        {columns.map(column => <td key={column.accessor + index}>
+                        {columns.map(column => <td key={column.accessor + index} onClick={e => props.onCellClick ? props.onCellClick(e, row[column.accessor]) : undefined}>
                             {row[column.accessor]}
                         </td>)}
                         {(props.showDelete || props.showEdit) && <td className={styles['action-buttons']}>
-                            {props.showEdit && <FaEdit onClick={e => props.onEdit ? props.onEdit(e, row) : undefined} className={styles['edit']} />}
-                            {props.showDelete && <FaTrash onClick={e => onDelete(e, row, index)} className={styles['trash']} />}
+                            {props.showEdit && <FaEdit onClick={e => props.onEdit ? props.onEdit(e, { ...row }) : undefined} className={styles['edit']} />}
+                            {props.showDelete && <FaTrash onClick={e => onDelete(e, { ...row }, index)} className={styles['trash']} />}
                         </td>}
-                    </tr>)}
+                    </tr>) : <tr className={styles['no-row-found']}>
+                        <td colSpan={columns.length + (props.checkbox ? 1 : 0) + (props.showDelete ? 1 : 0) + (props.showEdit ? 1 : 0)}>
+                            No Rows Found
+                        </td>
+                    </tr>}
                 </tbody>
             </table>
             <div>
                 <div className={styles["table-footer"]}>
                     <div className={styles["table-footer-left"]}>
                         <div className={styles["table-footer-left-2"]}>
-                            Showing {pagination.range.start} to {pagination.range.end} of {tableData.length} entries
+                            Showing {data.length} of {tableData.length} entries
                         </div>
                         {props.showAll && <div className={styles["show-all-data"]}>
                             <span>
@@ -217,7 +222,7 @@ export default (props: DataTableProps) => {
                 <div>
                     <p>
                         {selectedRows.length} Rows selected
-                        <span className={styles["do-with-selected"]} onClick={() => props?.onSelectedRows ? props.onSelectedRows(selectedRows) : null}>
+                        <span className={styles["do-with-selected"]} onClick={() => props?.onSelectedRows ? props.onSelectedRows([...selectedRows]) : null}>
                             Do Something ?
                         </span>
                     </p>

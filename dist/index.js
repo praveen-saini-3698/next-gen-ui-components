@@ -21,7 +21,7 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
-var styles = {"ui-data-table-tek":"_27W74","data-table":"_3fMGm","sortable-column":"_2xDhl","action-buttons":"_3Bd-C","trash":"_1hW9J","edit":"_2PEg8","bordered":"_3y7kh","show-pointer":"_2yfNS","show-global-search":"_2Sx3R","table-title":"_HTXGl","table-footer":"_1V7LX","table-footer-left":"_NVrA3","table-footer-left-2":"_o_eOA","show-all-data":"_Ve8dK","table-footer-right":"_2iwvf","current-page":"_teB0r","table-selected-rows":"_o5Ukt","do-with-selected":"_3BxJo"};
+var styles = {"ui-data-table-tek":"_27W74","data-table":"_3fMGm","sortable-column":"_2xDhl","action-buttons":"_3Bd-C","trash":"_1hW9J","edit":"_2PEg8","no-row-found":"_2f_oI","bordered":"_3y7kh","show-pointer":"_2yfNS","show-global-search":"_2Sx3R","table-title":"_HTXGl","table-footer":"_1V7LX","table-footer-left":"_NVrA3","table-footer-left-2":"_o_eOA","show-all-data":"_Ve8dK","table-footer-right":"_2iwvf","current-page":"_teB0r","table-selected-rows":"_o5Ukt","do-with-selected":"_3BxJo"};
 
 var DefaultContext = {
   color: undefined,
@@ -283,6 +283,7 @@ var index = (function (props) {
       return JSON.stringify(row).toLowerCase().match(value.toLowerCase());
     }).slice(0, pagination.rowPerPage);
     setData([].concat(filter));
+    if (props.onSearch) props.onSearch(value);
   };
 
   var onSorting = function onSorting(type, direction) {
@@ -328,9 +329,12 @@ var index = (function (props) {
     }, column.label, props.sortable && React.createElement("span", {
       className: styles["sortable-column"]
     }, sortDirection[column.accessor] === "asc" && React.createElement(FaSortDown, null), sortDirection[column.accessor] === "desc" && React.createElement(FaSortUp, null), sortDirection[column.accessor] === null && React.createElement(FaSort, null))));
-  }), (props.showEdit || props.showDelete) && React.createElement("th", null, "Action"))), React.createElement("tbody", null, data.length && data.map(function (row, index) {
+  }), (props.showEdit || props.showDelete) && React.createElement("th", null, "Action"))), React.createElement("tbody", null, data.length ? data.map(function (row, index) {
     return React.createElement("tr", {
-      key: index
+      key: index,
+      onClick: function onClick(e) {
+        return props.onRowClick ? props.onRowClick(e, _extends({}, row)) : undefined;
+      }
     }, props.checkbox && React.createElement("td", null, React.createElement(Checkbox, {
       checked: selectedRows.find(function (selected) {
         return row.id === selected.id;
@@ -345,28 +349,35 @@ var index = (function (props) {
       color: "primary"
     })), columns.map(function (column) {
       return React.createElement("td", {
-        key: column.accessor + index
+        key: column.accessor + index,
+        onClick: function onClick(e) {
+          return props.onCellClick ? props.onCellClick(e, row[column.accessor]) : undefined;
+        }
       }, row[column.accessor]);
     }), (props.showDelete || props.showEdit) && React.createElement("td", {
       className: styles['action-buttons']
     }, props.showEdit && React.createElement(FaEdit, {
       onClick: function onClick(e) {
-        return props.onEdit ? props.onEdit(e, row) : undefined;
+        return props.onEdit ? props.onEdit(e, _extends({}, row)) : undefined;
       },
       className: styles['edit']
     }), props.showDelete && React.createElement(FaTrash, {
       onClick: function onClick(e) {
-        return onDelete(e, row, index);
+        return onDelete(e, _extends({}, row), index);
       },
       className: styles['trash']
     })));
-  }))), React.createElement("div", null, React.createElement("div", {
+  }) : React.createElement("tr", {
+    className: styles['no-row-found']
+  }, React.createElement("td", {
+    colSpan: columns.length + (props.checkbox ? 1 : 0) + (props.showDelete ? 1 : 0) + (props.showEdit ? 1 : 0)
+  }, "No Rows Found")))), React.createElement("div", null, React.createElement("div", {
     className: styles["table-footer"]
   }, React.createElement("div", {
     className: styles["table-footer-left"]
   }, React.createElement("div", {
     className: styles["table-footer-left-2"]
-  }, "Showing ", pagination.range.start, " to ", pagination.range.end, " of ", tableData.length, " entries"), props.showAll && React.createElement("div", {
+  }, "Showing ", data.length, " of ", tableData.length, " entries"), props.showAll && React.createElement("div", {
     className: styles["show-all-data"]
   }, React.createElement("span", null, React.createElement(Checkbox, {
     onClick: function onClick(event) {
@@ -421,13 +432,88 @@ var index = (function (props) {
   }, React.createElement("div", null, React.createElement("p", null, selectedRows.length, " Rows selected", React.createElement("span", {
     className: styles["do-with-selected"],
     onClick: function onClick() {
-      return props !== null && props !== void 0 && props.onSelectedRows ? props.onSelectedRows(selectedRows) : null;
+      return props !== null && props !== void 0 && props.onSelectedRows ? props.onSelectedRows([].concat(selectedRows)) : null;
     }
   }, "Do Something ?")))) : undefined);
 });
 
 var index$1 = (function (props) {
   return React.createElement("div", null, React.createElement("header", null, props.title), props.children);
+});
+
+var styles$3 = {"record-view":"_hVJWn","record-header":"_2xWsK","record-content":"_1BH2o","item":"_3i9ES","label":"_DcATi","value":"_2pZVI","record-item":"_dhgW7"};
+
+var convertValue = function convertValue(type, value) {
+  if ([null, undefined, "", 0, [], {}].includes(value)) return value;
+  var formattedValue = null;
+
+  switch (type) {
+    case "boolean":
+      formattedValue = ["yes", "true", true, 1, "1"].includes(value) ? "Yes" : "No";
+      break;
+
+    case "number":
+      formattedValue = parseFloat(value).toFixed(2);
+      break;
+
+    case "date":
+      formattedValue = new Date(value).toLocaleString('default', {
+        month: 'long',
+        year: 'numeric',
+        day: 'numeric'
+      });
+      break;
+
+    case "datetime":
+      formattedValue = new Date(value).toLocaleString('default', {
+        month: 'long',
+        year: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric'
+      });
+      break;
+
+    case "amount":
+      formattedValue = parseFloat(Number(value).toFixed(2)).toLocaleString('en-IN', {
+        style: 'currency',
+        currency: 'INR'
+      });
+      break;
+
+    case "avatar":
+      formattedValue = value;
+      break;
+
+    case "string":
+      formattedValue = JSON.stringify(value).replace(/"/g, '');
+  }
+  return formattedValue;
+};
+
+var index$2 = (function (props) {
+  return React.createElement("div", {
+    className: styles$3['record-view']
+  }, React.createElement("div", {
+    className: styles$3['record-header']
+  }, props.title), React.createElement("div", {
+    className: styles$3['record-content']
+  }, Object.entries(props.record).map(function (_ref) {
+    var value = _ref[1];
+    return props.view === "simple" ? React.createElement("div", {
+      className: styles$3['item']
+    }, React.createElement("div", {
+      className: styles$3['label']
+    }, value.label), React.createElement("div", {
+      className: styles$3['value']
+    }, convertValue(value.type, value.value))) : React.createElement("div", {
+      className: styles$3['record-item']
+    }, React.createElement("div", {
+      className: styles$3['label']
+    }, React.createElement("label", null, value.label)), React.createElement("div", {
+      className: styles$3['value']
+    }, convertValue(value.type, value.value)));
+  })));
 });
 
 Object.defineProperty(exports, 'ConfirmationAlert', {
@@ -439,5 +525,6 @@ Object.defineProperty(exports, 'ConfirmationAlert', {
 exports.Button = Button;
 exports.Checkbox = Checkbox;
 exports.DataTable = index;
+exports.RecordView = index$2;
 exports.WelcomePage = index$1;
 //# sourceMappingURL=index.js.map

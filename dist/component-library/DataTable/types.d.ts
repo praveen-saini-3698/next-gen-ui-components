@@ -7,7 +7,7 @@ export interface DataTableColumnOptions {
     type?: HeaderValueTypes;
 }
 export interface DataTableDataOptions {
-    [key: string]: string | React.ReactNode;
+    [key: string]: string | number | React.ReactNode;
 }
 export interface PaginationOptions {
     rowPerPage: number;
@@ -22,13 +22,14 @@ export interface DataTableProps {
     data: DataTableDataOptions[];
     style?: React.CSSProperties;
     className?: string;
-    onRowClick?: CallableFunction;
-    onCellClick?: CallableFunction;
+    onRowClick?: (event: React.MouseEvent<HTMLTableRowElement, MouseEvent>, row: DataTableDataOptions) => void;
+    onCellClick?: (event: React.MouseEvent<HTMLTableCellElement, MouseEvent>, cell: any) => void;
     sortable?: boolean;
     title?: string | React.ReactNode;
     pagination?: PaginationOptions;
     checkbox?: boolean;
-    onSelectedRows?: CallableFunction;
+    onSelectedRows?: (rows: DataTableDataOptions[]) => void;
+    onSearch?: (searchText: string) => void;
     rowPerPage?: number;
     showAll?: boolean;
     bordered?: boolean;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 
 export type HeaderValueTypes = "string" | "number" | "boolean" | "amount" | "date" | "datetime" | "avatar" | "trash" | "view" | "edit";
 
@@ -11,7 +11,7 @@ export interface DataTableColumnOptions {
 };
 
 export interface DataTableDataOptions {
-    [key: string]: string | React.ReactNode;
+    [key: string]: string | number | React.ReactNode;
 };
 
 export interface PaginationOptions {
@@ -28,13 +28,14 @@ export interface DataTableProps {
     data: DataTableDataOptions[];
     style?: React.CSSProperties;
     className?: string;
-    onRowClick?: CallableFunction;
-    onCellClick?: CallableFunction;
+    onRowClick?: (event: React.MouseEvent<HTMLTableRowElement, MouseEvent>, row: DataTableDataOptions) => void;
+    onCellClick?: (event: React.MouseEvent<HTMLTableCellElement, MouseEvent>, cell: any) => void;
     sortable?: boolean;
     title?: string | React.ReactNode;
     pagination?: PaginationOptions;
     checkbox?: boolean;
-    onSelectedRows?: CallableFunction;
+    onSelectedRows?: (rows: DataTableDataOptions[]) => void;
+    onSearch?: (searchText: string) => void;
     rowPerPage?: number;
     showAll?: boolean;
     bordered?: boolean;
