@@ -515,5 +515,103 @@ var index$2 = (function (props) {
   })));
 });
 
-export { Button, Checkbox, index as DataTable, index$2 as RecordView, index$1 as WelcomePage };
+var styles$4 = {"form-field":"_3Jrm_","form-field-email":"_3Xqzv","form-lebel":"_2_91p","form-field-number":"_Gdz8E","form-field-text":"_3tZ64","form-field-date":"_26VyR","form-field-datetime":"_10QmK","form-field-datetime-local":"_uB8zp","form-field-url":"_55_8Y","form-field-time":"_2tb9X","form-field-week":"_1Ham7","form-field-tel":"_3oF8x","form-field-range":"_3jz37","form-field-image":"_2YtyO","form-field-file":"_35MCr","form-field-search":"_23isO","form-field-month":"_2HtUu","form-field-password":"_12KEU","form-label":"_3ePF5","form-input":"_1sS57","type-button":"_lb08b","type-reset":"_2Wx8E","type-submit":"_38I3Y","type-checkbox":"_1v7S1","type-radio":"_2H_iS","type-date":"_2ZeN0","type-datetime":"_2FJ4A","type-datetime-local":"_2D7h7","type-month":"_2CGqc","type-text":"_2I7ug","type-email":"_3wQoe","type-url":"_14sFE","type-week":"_10L_g","type-search":"_2UGCO","type-tel":"_1aeFo","type-time":"_38vQF","type-range":"_1aEgJ","type-file":"_VTdAm","type-image":"_3boYO","type-password":"_26Y6Q","type-number":"_3p-Cm"};
+
+var GenericComponent = (function (props) {
+  return React.createElement("div", {
+    className: styles$4['form-field'] + " " + styles$4['form-field-' + props.type] + " " + styles$4['inputField']
+  }, props.label && props.position !== "after" && React.createElement("span", {
+    className: "" + styles$4["form-label"]
+  }, props.label), React.createElement("input", {
+    className: styles$4["form-input"] + " " + styles$4["type-" + props.type],
+    autoFocus: props.autoFocus,
+    checked: props.checked,
+    disabled: props.disabled,
+    height: props.height,
+    list: props.list,
+    max: props.max,
+    maxLength: props.maxLength,
+    min: props.min,
+    minLength: props.minLength,
+    multiple: props.multiple,
+    name: props.name,
+    pattern: props.pattern,
+    placeholder: props.placeholder,
+    readOnly: props.readOnly,
+    required: props.required,
+    size: props.size,
+    src: props.src,
+    step: props.step,
+    value: props.value,
+    width: props.width,
+    style: props.style,
+    type: props.type,
+    onChange: props.onChange
+  }), props.label && props.position === "after" && React.createElement("span", {
+    className: "" + styles$4["form-label"]
+  }, props.label));
+});
+
+var styles$5 = {"form-builder":"_2s6yy","form-title":"_2o7D0","form-container":"_1VnC0","form-actions":"_3FnHc"};
+
+var index$3 = (function (props) {
+  var _React$useState = React.useState({}),
+      form = _React$useState[0],
+      setForm = _React$useState[1];
+
+  var _React$useState2 = React.useState({}),
+      formSchema = _React$useState2[0],
+      setFormSchema = _React$useState2[1];
+
+  var _React$useState3 = React.useState(true),
+      initializing = _React$useState3[0],
+      setFormInitializing = _React$useState3[1];
+
+  React.useEffect(function () {
+    props.schema.forEach(function (field) {
+      var _field$value;
+
+      return field.name ? form[field.name] = (_field$value = field.value) != null ? _field$value : null : undefined;
+    });
+    setFormSchema(_extends({}, form));
+    setFormInitializing(false);
+  }, []);
+
+  var onValueChange = function onValueChange(name, value) {
+    var _extends2;
+
+    setForm(_extends({}, form, (_extends2 = {}, _extends2[name] = value, _extends2)));
+  };
+
+  return React.createElement("div", {
+    className: styles$5['form-builder']
+  }, React.createElement("div", {
+    className: styles$5['form-title']
+  }, React.createElement("h2", null, "Form Title")), !initializing && React.createElement("form", {
+    onSubmit: function onSubmit(e) {
+      e.preventDefault();
+      if (props.onSubmit) props.onSubmit(e, form);
+    },
+    onReset: function onReset() {
+      return setForm(_extends({}, formSchema));
+    }
+  }, React.createElement("div", {
+    className: styles$5['form-container']
+  }, props.schema.map(function (field) {
+    return React.createElement(GenericComponent, Object.assign({}, field, {
+      value: form[field.name],
+      onChange: function onChange(e) {
+        return onValueChange(field.name, e.target.value);
+      }
+    }));
+  })), React.createElement("div", {
+    className: styles$5['form-actions']
+  }, React.createElement(GenericComponent, {
+    type: "submit"
+  }), React.createElement(GenericComponent, {
+    type: "reset"
+  }))));
+});
+
+export { Button, Checkbox, index as DataTable, index$3 as FormBuilder, GenericComponent, index$2 as RecordView, index$1 as WelcomePage };
 //# sourceMappingURL=index.modern.js.map

@@ -1,0 +1,128 @@
+.form-field {
+    padding: 0.5rem;
+}
+
+.form-field-email,
+.form-field-number,
+.form-field-text,
+.form-field-date,
+.form-field-datetime,
+.form-field-datetime-local,
+.form-field-url,
+.form-field-time,
+.form-field-week,
+.form-field-tel,
+.form-field-range,
+.form-field-image,
+.form-field-file,
+.form-field-search,
+.form-field-month,
+.form-field-password {
+
+    .form-lebel {
+        position: absolute;
+        pointer-events: none;
+        top: 18px;
+        left: 10px;
+        transition: 0.2s ease all;
+    }
+
+    .form-label {
+        display: block;
+        position: absolute;
+        margin-top: -5px;
+        font-size: small;
+        background: white;
+        padding-inline: 4px;
+        border-radius: 5px;
+        margin-left: 12px;
+    }
+
+    .form-input {
+        margin: 5px;
+
+        &:focus::placeholder {
+            color: transparent;
+        }
+    }
+}
+
+.type-button,
+.type-reset,
+.type-submit {
+    content: 'Click Here!';
+    width: 4rem;
+    height: 2rem;
+    background-color: rgb(30, 108, 255);
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 5px;
+    padding: 0.2rem;
+    vertical-align: middle;
+
+    &:hover {
+        background-color: darken($color: rgb(30, 108, 255), $amount: 10);
+        cursor: pointer;
+    }
+}
+
+.type-reset {
+    background-color: rgb(255, 61, 61);
+
+    &:hover {
+        background-color: darken($color: rgb(255, 30, 30), $amount: 10);
+    }
+}
+
+.type-checkbox,
+.type-radio {
+    width: 20px;
+    height: 20px;
+    filter: hue-rotate(0deg);
+    vertical-align: middle;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.type-date,
+.type-datetime,
+.type-datetime-local,
+.type-month,
+.type-text,
+.type-email,
+.type-url,
+.type-week,
+.type-search,
+.type-tel,
+.type-time,
+.type-range,
+.type-file,
+.type-image,
+.type-password,
+.type-number {
+    border: 1px solid #c5c5c5;
+    min-width: 15rem;
+    min-height: 2.5rem;
+    padding-inline: 0.5rem;
+    font-size: large;
+    color: #565656;
+    font-family: initial;
+    border-radius: 5px;
+    vertical-align: middle;
+
+    &::placeholder {
+        font-size: medium;
+    }
+}
+
+.type-file {
+    padding-top: 0.6rem;
+}
+
+.form-field-range {
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 5px;
+}

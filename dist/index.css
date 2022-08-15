@@ -671,3 +671,216 @@
   font-size: large;
   font-weight: 400;
 }
+._3Jrm_ {
+  padding: 0.5rem;
+}
+
+._3Xqzv ._2_91p,
+._Gdz8E ._2_91p,
+._3tZ64 ._2_91p,
+._26VyR ._2_91p,
+._10QmK ._2_91p,
+._uB8zp ._2_91p,
+._55_8Y ._2_91p,
+._2tb9X ._2_91p,
+._1Ham7 ._2_91p,
+._3oF8x ._2_91p,
+._3jz37 ._2_91p,
+._2YtyO ._2_91p,
+._35MCr ._2_91p,
+._23isO ._2_91p,
+._2HtUu ._2_91p,
+._12KEU ._2_91p {
+  position: absolute;
+  pointer-events: none;
+  top: 18px;
+  left: 10px;
+  transition: 0.2s ease all;
+}
+._3Xqzv ._3ePF5,
+._Gdz8E ._3ePF5,
+._3tZ64 ._3ePF5,
+._26VyR ._3ePF5,
+._10QmK ._3ePF5,
+._uB8zp ._3ePF5,
+._55_8Y ._3ePF5,
+._2tb9X ._3ePF5,
+._1Ham7 ._3ePF5,
+._3oF8x ._3ePF5,
+._3jz37 ._3ePF5,
+._2YtyO ._3ePF5,
+._35MCr ._3ePF5,
+._23isO ._3ePF5,
+._2HtUu ._3ePF5,
+._12KEU ._3ePF5 {
+  display: block;
+  position: absolute;
+  margin-top: -5px;
+  font-size: small;
+  background: white;
+  padding-inline: 4px;
+  border-radius: 5px;
+  margin-left: 12px;
+}
+._3Xqzv ._1sS57,
+._Gdz8E ._1sS57,
+._3tZ64 ._1sS57,
+._26VyR ._1sS57,
+._10QmK ._1sS57,
+._uB8zp ._1sS57,
+._55_8Y ._1sS57,
+._2tb9X ._1sS57,
+._1Ham7 ._1sS57,
+._3oF8x ._1sS57,
+._3jz37 ._1sS57,
+._2YtyO ._1sS57,
+._35MCr ._1sS57,
+._23isO ._1sS57,
+._2HtUu ._1sS57,
+._12KEU ._1sS57 {
+  margin: 5px;
+}
+._3Xqzv ._1sS57:focus::-moz-placeholder, ._Gdz8E ._1sS57:focus::-moz-placeholder, ._3tZ64 ._1sS57:focus::-moz-placeholder, ._26VyR ._1sS57:focus::-moz-placeholder, ._10QmK ._1sS57:focus::-moz-placeholder, ._uB8zp ._1sS57:focus::-moz-placeholder, ._55_8Y ._1sS57:focus::-moz-placeholder, ._2tb9X ._1sS57:focus::-moz-placeholder, ._1Ham7 ._1sS57:focus::-moz-placeholder, ._3oF8x ._1sS57:focus::-moz-placeholder, ._3jz37 ._1sS57:focus::-moz-placeholder, ._2YtyO ._1sS57:focus::-moz-placeholder, ._35MCr ._1sS57:focus::-moz-placeholder, ._23isO ._1sS57:focus::-moz-placeholder, ._2HtUu ._1sS57:focus::-moz-placeholder, ._12KEU ._1sS57:focus::-moz-placeholder {
+  color: transparent;
+}
+._3Xqzv ._1sS57:focus::placeholder,
+._Gdz8E ._1sS57:focus::placeholder,
+._3tZ64 ._1sS57:focus::placeholder,
+._26VyR ._1sS57:focus::placeholder,
+._10QmK ._1sS57:focus::placeholder,
+._uB8zp ._1sS57:focus::placeholder,
+._55_8Y ._1sS57:focus::placeholder,
+._2tb9X ._1sS57:focus::placeholder,
+._1Ham7 ._1sS57:focus::placeholder,
+._3oF8x ._1sS57:focus::placeholder,
+._3jz37 ._1sS57:focus::placeholder,
+._2YtyO ._1sS57:focus::placeholder,
+._35MCr ._1sS57:focus::placeholder,
+._23isO ._1sS57:focus::placeholder,
+._2HtUu ._1sS57:focus::placeholder,
+._12KEU ._1sS57:focus::placeholder {
+  color: transparent;
+}
+
+._lb08b,
+._2Wx8E,
+._38I3Y {
+  content: "Click Here!";
+  width: 4rem;
+  height: 2rem;
+  background-color: rgb(30, 108, 255);
+  color: white;
+  font-weight: bold;
+  border: 0px;
+  border-radius: 5px;
+  padding: 0.2rem;
+  vertical-align: middle;
+}
+._lb08b:hover,
+._2Wx8E:hover,
+._38I3Y:hover {
+  background-color: #0051ea;
+  cursor: pointer;
+}
+
+._2Wx8E {
+  background-color: rgb(255, 61, 61);
+}
+._2Wx8E:hover {
+  background-color: #ea0000;
+}
+
+._1v7S1,
+._2H_iS {
+  width: 20px;
+  height: 20px;
+  filter: hue-rotate(0deg);
+  vertical-align: middle;
+}
+._1v7S1:hover,
+._2H_iS:hover {
+  cursor: pointer;
+}
+
+._2ZeN0,
+._2FJ4A,
+._2D7h7,
+._2CGqc,
+._2I7ug,
+._3wQoe,
+._14sFE,
+._10L_g,
+._2UGCO,
+._1aeFo,
+._38vQF,
+._1aEgJ,
+._VTdAm,
+._3boYO,
+._26Y6Q,
+._3p-Cm {
+  border: 1px solid #c5c5c5;
+  min-width: 15rem;
+  min-height: 2.5rem;
+  padding-inline: 0.5rem;
+  font-size: large;
+  color: #565656;
+  font-family: initial;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+._2ZeN0::-moz-placeholder, ._2FJ4A::-moz-placeholder, ._2D7h7::-moz-placeholder, ._2CGqc::-moz-placeholder, ._2I7ug::-moz-placeholder, ._3wQoe::-moz-placeholder, ._14sFE::-moz-placeholder, ._10L_g::-moz-placeholder, ._2UGCO::-moz-placeholder, ._1aeFo::-moz-placeholder, ._38vQF::-moz-placeholder, ._1aEgJ::-moz-placeholder, ._VTdAm::-moz-placeholder, ._3boYO::-moz-placeholder, ._26Y6Q::-moz-placeholder, ._3p-Cm::-moz-placeholder {
+  font-size: medium;
+}
+._2ZeN0::placeholder,
+._2FJ4A::placeholder,
+._2D7h7::placeholder,
+._2CGqc::placeholder,
+._2I7ug::placeholder,
+._3wQoe::placeholder,
+._14sFE::placeholder,
+._10L_g::placeholder,
+._2UGCO::placeholder,
+._1aeFo::placeholder,
+._38vQF::placeholder,
+._1aEgJ::placeholder,
+._VTdAm::placeholder,
+._3boYO::placeholder,
+._26Y6Q::placeholder,
+._3p-Cm::placeholder {
+  font-size: medium;
+}
+
+._VTdAm {
+  padding-top: 0.6rem;
+}
+
+._3jz37 {
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 5px;
+}
+._2s6yy {
+  border: 1px solid rgb(218, 218, 218);
+  border-radius: 10px;
+  padding-inline: 1rem;
+  margin: 0.5rem;
+}
+._2s6yy ._2o7D0 h2 {
+  color: rgb(78, 78, 78);
+  margin: 10px;
+}
+._2s6yy ._1VnC0 {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: space-around;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+._2s6yy ._3FnHc {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
