@@ -17,6 +17,8 @@ export interface FormSchema {
 }
 export interface FormBuilderProps {
     schema: Array<GenericComponentProps<HTMLInputElement>>;
+    title?: string | ReactNode;
+    initialValue?: Record<string, any>;
     variant?: "mui" | "bootstrap" | "simple" | "custom";
     onSubmit?: (event: FormEvent<HTMLFormElement>, form: Record<string, string | number | boolean | Date | null>) => void;
     onInput?: (name: string, value: string) => void;

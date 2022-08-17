@@ -9,7 +9,7 @@ export default (props: FormBuilderProps) => {
     const [initializing, setFormInitializing] = React.useState<boolean>(true);
 
     React.useEffect(() => {
-        props.schema.forEach(field => field.name ? form[field.name] = field.value ?? null : undefined);
+        props.schema.forEach(field => field.name ? form[field.name] = field.value ?? (props?.initialValue ? props.initialValue[field.name] : '') ?? '' : undefined);
         setFormSchema({ ...form });
         setFormInitializing(false);
     }, []);
@@ -20,12 +20,12 @@ export default (props: FormBuilderProps) => {
 
     return (
         <div className={styles['form-builder']}>
-            <div className={styles['form-title']}>
-                <h2>Form Title</h2>
-            </div>
+            {props.title && <div className={styles['form-title']}>
+                <h2>{props.title}</h2>
+            </div>}
             {!initializing && <form onSubmit={e => { e.preventDefault(); if (props.onSubmit) props.onSubmit(e, form); }} onReset={() => setForm({ ...formSchema })}>
                 <div className={styles['form-container']}>
-                    {props.schema.map(field => <GenericComponent {...field} value={form[field.name as string]} onChange={e => onValueChange(field.name as string, e.target.value)} />)}
+                    {props.schema.map((field, index) => <GenericComponent {...field} key={index} value={form[field.name as string]} onChange={e => onValueChange(field.name as string, e.target.value)} />)}
                 </div>
                 <div className={styles['form-actions']}>
                     <GenericComponent type="submit" />

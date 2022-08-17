@@ -31,6 +31,7 @@ export default (props: GenericComponentProps<HTMLInputElement>) => {
                 style={props.style}
                 type={props.type}
                 onChange={props.onChange}
+                title={props.title}
             />
             {props.label && props.position === "after" && <span className={`${styles["form-label"]}`}>{props.label}</span>}
         </div>

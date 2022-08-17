@@ -1,8 +1,10 @@
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 require('react-confirm-alert/src/react-confirm-alert.css');
+require('react-pro-sidebar/dist/scss/styles.scss');
 var React = _interopDefault(require('react'));
 var reactConfirmAlert = require('react-confirm-alert');
+var reactProSidebar = require('react-pro-sidebar');
 
 function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
@@ -547,7 +549,8 @@ var GenericComponent = (function (props) {
     width: props.width,
     style: props.style,
     type: props.type,
-    onChange: props.onChange
+    onChange: props.onChange,
+    title: props.title
   }), props.label && props.position === "after" && React.createElement("span", {
     className: "" + styles$4["form-label"]
   }, props.label));
@@ -570,9 +573,9 @@ var index$3 = (function (props) {
 
   React.useEffect(function () {
     props.schema.forEach(function (field) {
-      var _field$value;
+      var _ref, _field$value;
 
-      return field.name ? form[field.name] = (_field$value = field.value) != null ? _field$value : null : undefined;
+      return field.name ? form[field.name] = (_ref = (_field$value = field.value) != null ? _field$value : props !== null && props !== void 0 && props.initialValue ? props.initialValue[field.name] : '') != null ? _ref : '' : undefined;
     });
     setFormSchema(_extends({}, form));
     setFormInitializing(false);
@@ -586,9 +589,9 @@ var index$3 = (function (props) {
 
   return React.createElement("div", {
     className: styles$5['form-builder']
-  }, React.createElement("div", {
+  }, props.title && React.createElement("div", {
     className: styles$5['form-title']
-  }, React.createElement("h2", null, "Form Title")), !initializing && React.createElement("form", {
+  }, React.createElement("h2", null, props.title)), !initializing && React.createElement("form", {
     onSubmit: function onSubmit(e) {
       e.preventDefault();
       if (props.onSubmit) props.onSubmit(e, form);
@@ -598,8 +601,9 @@ var index$3 = (function (props) {
     }
   }, React.createElement("div", {
     className: styles$5['form-container']
-  }, props.schema.map(function (field) {
+  }, props.schema.map(function (field, index) {
     return React.createElement(GenericComponent, Object.assign({}, field, {
+      key: index,
       value: form[field.name],
       onChange: function onChange(e) {
         return onValueChange(field.name, e.target.value);
@@ -614,6 +618,82 @@ var index$3 = (function (props) {
   }))));
 });
 
+var ConvertItems = function ConvertItems(_ref) {
+  var items = _ref.items,
+      selected = _ref.selected,
+      setSelectedItem = _ref.setSelectedItem;
+  return React.createElement(reactProSidebar.Menu, {
+    iconShape: "circle"
+  }, items.map(function (item) {
+    var _item$submenu;
+
+    if ((_item$submenu = item.submenu) !== null && _item$submenu !== void 0 && _item$submenu.length) {
+      return React.createElement(reactProSidebar.Menu, {
+        iconShape: "circle"
+      }, React.createElement(reactProSidebar.SubMenu, {
+        title: item.label,
+        prefix: item.prefix,
+        suffix: item.suffix,
+        icon: item.icon
+      }, React.createElement(ConvertItems, {
+        items: item.submenu,
+        selected: selected,
+        setSelectedItem: setSelectedItem
+      })));
+    }
+
+    return React.createElement(reactProSidebar.MenuItem, {
+      icon: item.icon,
+      suffix: item.suffix,
+      onClick: function onClick(e) {
+        setSelectedItem(item.key);
+        return item.onClick ? item.onClick(e, item) : undefined;
+      },
+      className: selected === item.key ? 'selected' : ''
+    }, item.label);
+  }));
+};
+
+var Aside = function Aside(props) {
+  var _props$content;
+
+  var _React$useState = React.useState("home"),
+      selectedItem = _React$useState[0],
+      setSelectedItem = _React$useState[1];
+
+  return React.createElement(reactProSidebar.ProSidebar, {
+    collapsed: props.collapsed,
+    breakPoint: "md"
+  }, props.title && React.createElement(reactProSidebar.SidebarHeader, null, React.createElement("div", {
+    style: {
+      padding: '24px',
+      textTransform: 'uppercase',
+      fontWeight: 'bold',
+      fontSize: 14,
+      letterSpacing: '1px',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap'
+    }
+  }, props.title)), React.createElement(reactProSidebar.SidebarContent, null, (_props$content = props.content) !== null && _props$content !== void 0 && _props$content.length ? React.createElement(ConvertItems, {
+    items: props.content,
+    selected: selectedItem,
+    setSelectedItem: setSelectedItem
+  }) : undefined), props.footer && React.createElement(reactProSidebar.SidebarFooter, {
+    style: {
+      textAlign: 'center'
+    }
+  }, React.createElement("div", null, props.footer)));
+};
+
+var index$4 = (function (props) {
+  return React.createElement("div", {
+    className: "app " + (props.toggled ? 'toggled' : '')
+  }, React.createElement(Aside, Object.assign({}, props, {
+    children: undefined
+  })), React.createElement("main", null, props.children));
+});
+
 Object.defineProperty(exports, 'ConfirmationAlert', {
   enumerable: true,
   get: function () {
@@ -626,5 +706,6 @@ exports.DataTable = index;
 exports.FormBuilder = index$3;
 exports.GenericComponent = GenericComponent;
 exports.RecordView = index$2;
+exports.Sidebar = index$4;
 exports.WelcomePage = index$1;
 //# sourceMappingURL=index.js.map

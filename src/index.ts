@@ -1,4 +1,5 @@
 import 'react-confirm-alert/src/react-confirm-alert.css';
+import 'react-pro-sidebar/dist/scss/styles.scss';
 export { default as DataTable } from './component-library/DataTable';
 export { default as WelcomePage } from './component-library/WelcomePage';
 export { default as Button } from './component-library/Button';
@@ -7,3 +8,4 @@ export { default as RecordView } from './component-library/RecordView';
 export { confirmAlert as ConfirmationAlert } from 'react-confirm-alert';
 export { default as GenericComponent } from './component-library/GenericComponent';
 export { default as FormBuilder } from './component-library/FormBuilder';
+export { default as Sidebar } from './component-library/Sidebar';

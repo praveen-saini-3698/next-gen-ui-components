@@ -34,12 +34,13 @@
         font-size: small;
         background: white;
         padding-inline: 4px;
-        border-radius: 5px;
+        border-radius: 10px;
         margin-left: 12px;
     }
 
     .form-input {
         margin: 5px;
+        width: 100%;
 
         &:focus::placeholder {
             color: transparent;
@@ -115,6 +116,7 @@
 
     &::placeholder {
         font-size: medium;
+        color: #d3d3d3;
     }
 }
 

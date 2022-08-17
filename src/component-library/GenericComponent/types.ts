@@ -35,5 +35,6 @@ export interface GenericComponentProps<T> {
     type: HTMLInputElementTypes;
     label?: string | ReactNode;
     position?: "before" | "after";
+    title?: string;
     onChange?: (event: ChangeEvent<T>, metaData?: any) => void;
 }
